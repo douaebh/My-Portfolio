@@ -21,7 +21,9 @@
                     <li>
                         <router-link to="/"
                             class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            active-class="text-blue-700" aria-current="page">Home</router-link>
+                            active-class="text-blue-700">
+                            Home
+                        </router-link>
                     </li>
 
                     <li>
@@ -52,3 +54,17 @@
         </div>
     </nav>
 </template>
+
+<!-- <template>
+    <nav class="absolute top-0 left-0 right-0 z-20 bg-transparent p-4">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-semibold text-gray-900">Ayoub Tribak</a>
+            <div class="hidden md:flex space-x-8">
+                <router-link to="/" class="text-gray-900 hover:text-yellow-500 font-medium" active-class="text-yellow-500">Home</router-link>
+                <router-link to="/about" class="text-gray-900 hover:text-yellow-500 font-medium" active-class="text-yellow-500">About</router-link>
+                <router-link to="/projects" class="text-gray-900 hover:text-yellow-500 font-medium" active-class="text-yellow-500">Projects</router-link>
+                <router-link to="/contact" class="text-gray-900 hover:text-yellow-500 font-medium" active-class="text-yellow-500">Contact</router-link>
+            </div>
+        </div>
+    </nav>
+</template> -->
