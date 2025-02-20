@@ -1,9 +1,9 @@
 <template>
     <div class="relative z-10 max-w-screen-xl mx-auto px-4 py-6">
-        <div class="flex flex-col lg:flex-row justify-between gap-6 mt-9">
+        <div class="flex flex-col lg:flex-row justify-between gap-6 mt-9 mb-9">
             <div class=" text-center lg:text-left">
-                <p class="text-primary font-nunito font-semibold text-5xl uppercase">About Me</p>
-                <h2 class="text-5xl font-playfair font-bold text-gray-900 mt-4 mb-6">
+                <p class="text-primary font-nunito font-semibold text-xl uppercase">About Me</p>
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mt-4 mb-6">
                     Passionate Full Stack Developer
                 </h2>
                 <p class="text-gray-400 font-nunito text-2xl mt-5 mb-7">
@@ -16,16 +16,13 @@
                     I'm always eager to learn, experiment, and push the boundaries of what technology can achieve.
                 </p>
                 <div class="flex space-x-4 mt-7 justify-center lg:justify-start">
-                    <button
-                        class="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
-                        Resume
-                    </button>
-                    <button
-                        class="px-6 py-3 border border-gray-700 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition duration-300">
-                        Contact Me
-                    </button>
+                    <BaseButton text="Contact Me" btnClass="px-5 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300"/>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<script setup>
+import BaseButton from './BaseButton.vue';
+</script>

@@ -10,14 +10,8 @@
                     A passionate web developer crafting modern web applications and innovative digital solutions.
                 </p>
                 <div class="flex space-x-4 mt-7 justify-center lg:justify-start">
-                    <button
-                        class="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
-                        Projects
-                    </button>
-                    <button
-                        class="px-6 py-3 border border-gray-700 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition duration-300">
-                        LinkedIn
-                    </button>
+                    <BaseButton text="Resume" btnClass="px-5 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300"/>
+                    <BaseButton text="LinkedIn" btnClass="px-5 py-2 border border-gray-700 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition duration-300"/>
                 </div>
             </div>
 
@@ -30,3 +24,7 @@
         <img src="../assets/yellow-bg.svg" alt="Yellow Background" class="w-full h-auto object-cover" />
     </div>
 </template>
+
+<script setup>
+import BaseButton from './BaseButton.vue';
+</script>
