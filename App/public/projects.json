@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Soli-LMS",
+        "description": "A Learning Management System with skill hierarchy, training modules, and administrator controls.",
+        "status": "active",
+        "demo": "#",
+        "github": "https://github.com/yourusername/soli-lms",
+        "image": "/images/lms.svg"
+    },
+    {
+        "id": 2,
+        "name": "Sanction Management System",
+        "description": "A system that manages sanctions based on absenteeism, with automatic checks and manual triggers.",
+        "status": "active",
+        "demo": "#",
+        "github": "https://github.com/Tribak-Ayoub/Project-fil-rouge",
+        "image": "/images/lms.svg"
+    },
+    {
+        "id": 3,
+        "name": "E-commerce website",
+        "description": "A Laravel 11 and Vue 3 e-commerce website.",
+        "status": "in-progress",
+        "demo": "#",
+        "github": "https://github.com/Tribak-Ayoub/E-commerce",
+        "image": "/images/e-commerce.png"
+    }
+]

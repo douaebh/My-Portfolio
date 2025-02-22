@@ -16,7 +16,8 @@
                     I'm always eager to learn, experiment, and push the boundaries of what technology can achieve.
                 </p>
                 <div class="flex space-x-4 mt-7 justify-center lg:justify-start">
-                    <BaseButton text="Contact Me" btnClass="px-5 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300"/>
+                    <BaseButton text="Contact Me"
+                        btnClass="px-5 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300" />
                 </div>
             </div>
         </div>
