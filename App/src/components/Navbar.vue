@@ -1,7 +1,7 @@
 <template>
     <nav class="bg-transparent border-gray-200 dark:bg-transparent dark:border-gray-700 relative z-20">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Ayoub Tribak</span>
             </a>
             <button data-collapse-toggle="navbar-default" type="button"
@@ -17,45 +17,20 @@
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul
                     class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">
-
                     <li>
-                        <router-link to="/"
-                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            active-class="text-blue-700">
-                            Home
-                        </router-link>
+                        <router-link to="/" class="nav-link" active-class="text-blue-700">Home</router-link>
                     </li>
-
                     <li>
-                        <router-link to="/about"
-                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            active-class="text-blue-700">
-                            About
-                        </router-link>
+                        <button @click="handleScroll('about')" class="nav-link">About</button>
                     </li>
-
                     <li>
-                        <router-link to="/projects"
-                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            active-class="text-blue-700">
-                            Projects
-                        </router-link>
+                        <button @click="handleScroll('projects')" class="nav-link">Projects</button>
                     </li>
-
                     <li>
-                        <router-link to="/resume"
-                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            active-class="text-blue-700">
-                            Resume
-                        </router-link>
+                        <router-link to="/resume" class="nav-link" active-class="text-blue-700">Resume</router-link>
                     </li>
-
                     <li>
-                        <router-link to="/contact"
-                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            active-class="text-blue-700">
-                            Contact
-                        </router-link>
+                        <button @click.prevent="handleScroll('contact')" class="nav-link">Contact</button>
                     </li>
                 </ul>
             </div>
@@ -63,16 +38,32 @@
     </nav>
 </template>
 
-<!-- <template>
-    <nav class="absolute top-0 left-0 right-0 z-20 bg-transparent p-4">
-        <div class="max-w-screen-xl mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-semibold text-gray-900">Ayoub Tribak</a>
-            <div class="hidden md:flex space-x-8">
-                <router-link to="/" class="text-gray-900 hover:text-yellow-500 font-medium" active-class="text-yellow-500">Home</router-link>
-                <router-link to="/about" class="text-gray-900 hover:text-yellow-500 font-medium" active-class="text-yellow-500">About</router-link>
-                <router-link to="/projects" class="text-gray-900 hover:text-yellow-500 font-medium" active-class="text-yellow-500">Projects</router-link>
-                <router-link to="/contact" class="text-gray-900 hover:text-yellow-500 font-medium" active-class="text-yellow-500">Contact</router-link>
-            </div>
-        </div>
-    </nav>
-</template> -->
+<script setup>
+import { useRouter, useRoute } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
+
+const handleScroll = (section) => {
+    if (route.path !== "/") {
+        router.push("/").then(() => {
+            setTimeout(() => scrollToSection(section), 300);
+        });
+    } else {
+        scrollToSection(section);
+    }
+};
+
+const scrollToSection = (section) => {
+    const target = document.getElementById(section);
+    if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+    }
+};
+</script>
+
+<style scoped>
+.nav-link {
+    @apply block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <button :class="btnClass"> {{ text }} </button>
+    <button :class="btnClass"> <span v-html="text"></span> </button>
 </template>
 
 <script setup>
