@@ -31,8 +31,7 @@
                     </li>
                     <li>
                         <router-link to="/resume" class="nav-link"
-                            :class="{ 'active-link': activeSection === '/resume' }"
-                            @click="setActive('/resume')">Resume</router-link>
+                            :class="{ 'active-link': activeSection === '/resume' }">Resume</router-link>
                     </li>
                     <li>
                         <button @click="handleScroll('contact')" class="nav-link"
@@ -53,25 +52,41 @@ const route = useRoute();
 
 const activeSection = ref(route.path === '/' ? 'home' : route.path);
 
+// Watch for changes in the route and update the active section accordingly
 watch(route, () => {
     activeSection.value = route.path;
 });
 
-// Smooth scrolling function
+// Scroll function with route check
 const handleScroll = (section) => {
-    const target = document.getElementById(section);
-    if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-        activeSection.value = section;
+    if (route.path !== '/') {
+        // If not on home page, navigate to home and then scroll
+        router.push('/').then(() => {
+            setTimeout(() => {
+                scrollToSection(section);
+            }, 200); // Adjusted delay time to allow route change
+        });
+    } else {
+        scrollToSection(section);
     }
 };
 
+// Function to scroll to the target section
+const scrollToSection = (section) => {
+    const target = document.getElementById(section);
+    if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+    }
+};
+
+// Function to scroll to the top for home route
 const handleScrollToHero = () => {
     if (route.path === '/') {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 };
 
+// Function to update active section based on scroll position
 const updateActiveSection = () => {
     const sections = document.querySelectorAll("section");
     let closestSection = null;
@@ -93,19 +108,17 @@ const updateActiveSection = () => {
     activeSection.value = closestSection || "home"; // Default to "home" if none found
 };
 
-// Attach the scroll event listener
+// Add scroll event listener when on the home page
 onMounted(() => {
     if (route.path === '/') {
         window.addEventListener("scroll", updateActiveSection);
     }
 });
 
-// Remove the event listener when leaving the component
+// Clean up on unmount
 onUnmounted(() => {
     window.removeEventListener("scroll", updateActiveSection);
 });
-
-
 </script>
 
 <style scoped>

@@ -2,7 +2,7 @@
     <div>
         <Navbar />
         <main class="pt-16">
-            <div class="container mx-auto p-8">
+            <section id="resume" class="container mx-auto p-8">
                 <h1 class="text-4xl font-bold mb-6 text-center">My Resume</h1>
 
                 <div class="bg-gray-100 p-6 rounded-lg shadow-md mb-6 grid  gap-6 items-center">
@@ -73,7 +73,7 @@
                                 <p class="text-sm text-gray-500"><strong>Location:</strong> {{ experience.location }}
                                 </p>
                                 <p class="text-sm text-gray-500"><strong>Start Date:</strong> {{ experience.start_date
-                                    }}</p>
+                                }}</p>
                                 <p class="text-sm text-gray-500"><strong>End Date:</strong> {{ experience.end_date ||
                                     'Present' }}</p>
                             </li>
@@ -111,7 +111,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </section>
         </main>
         <Footer />
     </div>
