@@ -44,6 +44,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import emailjs from 'emailjs-com';
 
 const form = ref({
     name: '',
@@ -60,12 +61,23 @@ const handleSubmit = async () => {
     successMessage.value = '';
     errorMessage.value = '';
 
-    try {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+    // EmailJS credentials
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
 
+    const templateParams = {
+        name: form.value.name,
+        email: form.value.email,
+        message: form.value.message
+    };
+
+    try {
+        await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID);
         successMessage.value = 'Your message has been sent successfully!';
         form.value = { name: '', email: '', message: '' };
     } catch (error) {
+        console.error('EmailJS Error:', error);
         errorMessage.value = 'Something went wrong. Please try again.';
     } finally {
         loading.value = false;

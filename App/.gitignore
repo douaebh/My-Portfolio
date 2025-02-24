@@ -1,21 +1,21 @@
-# Logs
-logs
+# Ignore .env files
+.env
+# Ignore node_modules folders
+node_modules/
+# Ignore logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Ignore build and dist files
+dist/
+dist-ssr/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Editor files and directories
+.vscode/
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
