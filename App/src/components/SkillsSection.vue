@@ -1,9 +1,9 @@
 <template>
-  <section class="py-16 bg-gray-50">
+  <div class="py-16 bg-gray-50">
     <div class="max-w-screen-xl mx-auto px-4">
       <div class="text-center">
         <h2 class="text-4xl font-playfair font-bold text-gray-900">My Skills</h2>
-        <p class="mt-4 font-nunito text-xl text-gray-400">Technologies I'm proficient in</p>
+        <p class="mt-4 font-nunito text-xl text-gray-400">Technologies and Tools I'm proficient in</p>
       </div>
 
       <div v-if="skills.length" class="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -34,7 +34,7 @@
       </div>
       <p v-else>Loading skills...</p>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>

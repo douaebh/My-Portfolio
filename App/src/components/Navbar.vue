@@ -1,6 +1,6 @@
 <template>
     <nav class="bg-transparent border-gray-200 dark:bg-transparent dark:border-gray-700 relative z-20">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 fixed top-0 right-0 left-0">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Ayoub Tribak</span>
             </a>
@@ -18,19 +18,25 @@
                 <ul
                     class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">
                     <li>
-                        <router-link to="/" class="nav-link" active-class="text-blue-700">Home</router-link>
+                        <router-link to="/" class="nav-link" :class="{ 'active-link': activeSection === 'home' }"
+                            @click="handleScrollToHero">Home</router-link>
                     </li>
                     <li>
-                        <button @click="handleScroll('about')" class="nav-link">About</button>
+                        <button @click="handleScroll('about')" class="nav-link"
+                            :class="{ 'active-link': activeSection === 'about' }">About</button>
                     </li>
                     <li>
-                        <button @click="handleScroll('projects')" class="nav-link">Projects</button>
+                        <button @click="handleScroll('projects')" class="nav-link"
+                            :class="{ 'active-link': activeSection === 'projects' }">Projects</button>
                     </li>
                     <li>
-                        <router-link to="/resume" class="nav-link" active-class="text-blue-700">Resume</router-link>
+                        <router-link to="/resume" class="nav-link"
+                            :class="{ 'active-link': activeSection === '/resume' }"
+                            @click="setActive('/resume')">Resume</router-link>
                     </li>
                     <li>
-                        <button @click.prevent="handleScroll('contact')" class="nav-link">Contact</button>
+                        <button @click="handleScroll('contact')" class="nav-link"
+                            :class="{ 'active-link': activeSection === 'contact' }">Contact</button>
                     </li>
                 </ul>
             </div>
@@ -39,31 +45,91 @@
 </template>
 
 <script setup>
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
 const route = useRoute();
 
-const handleScroll = (section) => {
-    if (route.path !== "/") {
-        router.push("/").then(() => {
-            setTimeout(() => scrollToSection(section), 300);
-        });
-    } else {
-        scrollToSection(section);
-    }
-};
+const activeSection = ref(route.path === '/' ? 'home' : route.path);
 
-const scrollToSection = (section) => {
+watch(route, () => {
+    activeSection.value = route.path;
+});
+
+// Smooth scrolling function
+const handleScroll = (section) => {
     const target = document.getElementById(section);
     if (target) {
         target.scrollIntoView({ behavior: "smooth" });
+        activeSection.value = section;
     }
 };
+
+const handleScrollToHero = () => {
+    if (route.path === '/') {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+};
+
+const updateActiveSection = () => {
+    const sections = document.querySelectorAll("section");
+    let closestSection = null;
+    let minDistance = Infinity;
+
+    const viewportCenter = window.innerHeight / 2; // Middle of the screen
+
+    sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2; // Center of the section
+        const distance = Math.abs(sectionCenter - viewportCenter); // Distance to middle
+
+        if (distance < minDistance) {
+            minDistance = distance;
+            closestSection = section.id;
+        }
+    });
+
+    activeSection.value = closestSection || "home"; // Default to "home" if none found
+};
+
+// Attach the scroll event listener
+onMounted(() => {
+    if (route.path === '/') {
+        window.addEventListener("scroll", updateActiveSection);
+    }
+});
+
+// Remove the event listener when leaving the component
+onUnmounted(() => {
+    window.removeEventListener("scroll", updateActiveSection);
+});
+
+
 </script>
 
 <style scoped>
 .nav-link {
-    @apply block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent;
+    @apply block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:p-0 dark:text-white relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.active-link::after {
+    background-color: #000000;
+}
+
+.active-link {
+    @apply border-b-2 border-black;
 }
 </style>

@@ -5,7 +5,7 @@
                 <div class="lg:w-1/2 text-center lg:text-left">
                     <p class="text-primary font-nunito font-semibold text-xl uppercase">Full Stack Developer</p>
                     <h1 class="text-6xl font-playfair font-bold text-gray-900 mt-4 mb-6">
-                        Hello, my name <br> is Ayoub Tribak
+                        Hello, my name <br> is Ayoub Tribak El Yedri
                     </h1>
                     <p class="text-gray-400 font-nunito text-2xl mt-5 mb-7">
                         A passionate web developer crafting modern web applications and innovative digital solutions.

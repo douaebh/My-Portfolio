@@ -4,8 +4,8 @@
             class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
 
             <div>
-                <h2 class="text-lg font-semibold text-white">Ayoub Tribak</h2>
-                <p class="text-gray-400 text-sm mt-1">Web Developer | Passionate about coding</p>
+                <h2 class="text-lg font-semibold text-white">Ayoub Tribak El Yedri</h2>
+                <p class="text-gray-400 text-sm mt-1">Full Stack Developer | Passionate about coding</p>
             </div>
 
             <div class="text-gray-500 text-sm mt-6">

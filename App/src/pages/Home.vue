@@ -1,8 +1,8 @@
 <template>
     <div class="relative">
         <Navbar />
-        <main>
-            <section>
+        <main class="pt-16">
+            <section id="home">
                 <HeroSection />
             </section>
             <section id="about" class="mt-20">
