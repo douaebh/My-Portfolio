@@ -11,9 +11,9 @@
                         A passionate web developer crafting modern web applications and innovative digital solutions.
                     </p>
                     <div class="flex space-x-4 mt-7 justify-center lg:justify-start">
-                        <BaseButton :text="'Resume <i class=\'fa-solid fa-arrow-down\'></i>'"
+                        <BaseButton @click="downloadResume()" :text="'Resume <i class=\'fa-solid fa-arrow-down\'></i>'"
                             btnClass="px-5 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300" />
-                        <BaseButton @click.prevent="handleScroll('contact')" text="Contact me"
+                        <BaseButton @click="scrollToSection('contact')" text="Contact me"
                             btnClass="px-5 py-2 border border-gray-700 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition duration-300" />
                         <a href="https://github.com/Tribak-Ayoub" target="_blank"
                             class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-gray-900 shadow-md hover:bg-yellow-400 hover:text-white transition duration-300">
@@ -43,4 +43,16 @@ import { inject } from 'vue';
 import BaseButton from './BaseButton.vue';
 
 const userInfo = inject('userInfo');
+
+const scrollToSection = (section) => {
+    const target = document.getElementById(section);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+};
+
+const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; 
+    link.download = 'resume.pdf'; 
+    link.click();
+};
 </script>
