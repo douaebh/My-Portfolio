@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import emailjs from 'emailjs-com';
 
 const form = ref({
@@ -56,6 +56,11 @@ const loading = ref(false);
 const successMessage = ref('');
 const errorMessage = ref('');
 
+// Initialize EmailJS when component is mounted
+onMounted(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID);
+});
+
 const handleSubmit = async () => {
     loading.value = true;
     successMessage.value = '';
@@ -64,7 +69,6 @@ const handleSubmit = async () => {
     // EmailJS credentials
     const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
 
     const templateParams = {
         name: form.value.name,
@@ -73,7 +77,7 @@ const handleSubmit = async () => {
     };
 
     try {
-        await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID);
+        await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
         successMessage.value = 'Your message has been sent successfully!';
         form.value = { name: '', email: '', message: '' };
     } catch (error) {

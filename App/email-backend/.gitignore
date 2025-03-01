@@ -1,4 +1,0 @@
-# Ignore .env files inside email-backend folder
-.env
-# Ignore node_modules in email-backend
-node_modules/
