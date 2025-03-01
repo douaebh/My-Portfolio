@@ -4,22 +4,22 @@
             class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
 
             <div>
-                <h2 class="text-lg font-semibold text-white">Ayoub Tribak El Yedri</h2>
-                <p class="text-gray-400 text-sm mt-1">Full Stack Developer | Passionate about coding</p>
+                <h2 class="text-lg font-semibold text-white">{{ userInfo.FirstName }} {{ userInfo.LastName }}</h2>
+                <p class="text-gray-400 text-sm mt-1">{{ userInfo.title }}</p>
             </div>
 
             <div class="text-gray-500 text-sm mt-6">
-                © {{ new Date().getFullYear() }} Ayoub Tribak. All rights reserved.
+                © {{ new Date().getFullYear() }} {{ userInfo.FirstName }} {{ userInfo.LastName }}. All rights reserved.
             </div>
 
             <div class="flex space-x-4 mt-4 md:mt-0 lg:ml-40">
-                <a href="https://github.com/Tribak-Ayoub" target="_blank" class="hover:text-yellow-400 transition">
+                <a :href="userInfo.Github" target="_blank" class="hover:text-yellow-400 transition">
                     <i class="fab fa-github text-xl"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/ayoub-tribak-el-yedri-064101229/" target="_blank" class="hover:text-yellow-400 transition">
+                <a :href="userInfo.LinkedIn" target="_blank" class="hover:text-yellow-400 transition">
                     <i class="fab fa-linkedin text-xl"></i>
                 </a>
-                <a href="mailto:tribak.elyedri.ayoub@gmail.com" class="hover:text-yellow-400 transition">
+                <a :href="'mailto:' + userInfo.Email" class="hover:text-yellow-400 transition">
                     <i class="fas fa-envelope text-xl"></i>
                 </a>
             </div>
@@ -29,4 +29,7 @@
 </template>
 
 <script setup>
+import { inject } from 'vue';
+
+const userInfo = inject('userInfo');
 </script>

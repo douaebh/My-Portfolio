@@ -5,7 +5,7 @@
                 <div class="lg:w-1/2 text-center lg:text-left">
                     <p class="text-primary font-nunito font-semibold text-xl uppercase">Full Stack Developer</p>
                     <h1 class="text-6xl font-playfair font-bold text-gray-900 mt-4 mb-6">
-                        Hello, my name <br> is Ayoub Tribak El Yedri
+                        Hello, my name <br> is {{ userInfo.FirstName }} {{ userInfo.LastName }}
                     </h1>
                     <p class="text-gray-400 font-nunito text-2xl mt-5 mb-7">
                         A passionate web developer crafting modern web applications and innovative digital solutions.
@@ -39,20 +39,8 @@
 </template>
 
 <script setup>
+import { inject } from 'vue';
 import BaseButton from './BaseButton.vue';
 
-// import { useRouter, useRoute } from 'vue-router';
-
-// const router = useRouter();
-// const route = useRoute();
-
-// const handleScroll = (section) => {
-//     if (route.path !== "/") {
-//         router.push("/").then(() => {
-//             setTimeout(() => scrollToSection(section), 300);
-//         });
-//     } else {
-//         scrollToSection(section);
-//     }
-// };
+const userInfo = inject('userInfo');
 </script>

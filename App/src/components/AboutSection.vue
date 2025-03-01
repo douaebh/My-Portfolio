@@ -6,16 +6,14 @@
                 <h2 class="text-4xl font-playfair font-bold text-gray-900 mt-4 mb-6">
                     Passionate Full Stack Developer
                 </h2>
-                <p class="text-gray-400 font-nunito text-2xl mt-5 mb-7">
-                    I'm Ayoub Tribak, a passionate Full Stack Developer with a strong foundation in Laravel,
-                    Vue.js, and modern web technologies. With a deep focus on clean architecture, user-friendly UI,
-                    and efficient database management, I specialize in building scalable web applications,
-                    e-commerce platforms, and dashboards. My work emphasizes problem-solving, automation,
-                    and enhancing user experience. Whether it's structuring a Git workflow for collaborative projects
-                    or developing innovative digital solutions, I strive to create meaningful and impactful software.
-                    I'm always eager to learn, experiment, and push the boundaries of what technology can achieve.
-                </p>
+                <p class="text-gray-400 font-nunito text-2xl mt-5 mb-7">{{ userInfo.About }}</p>
             </div>
         </div>
     </div>
 </template>
+
+<script setup>
+import { inject } from 'vue';
+
+const userInfo = inject('userInfo');
+</script>

@@ -48,17 +48,7 @@
 
 <script setup>
 import BaseButton from './BaseButton.vue';
-import { ref, onMounted } from 'vue';
+import { inject } from 'vue';
 
-const projects = ref([]);
-
-onMounted(async () => {
-    try {
-        const response = await fetch('/projects.json');
-        const data = await response.json();
-        projects.value = data;
-    } catch (error) {
-        console.error('Error fetching projects:', error);
-    }
-});
+const projects = inject('projects');
 </script>

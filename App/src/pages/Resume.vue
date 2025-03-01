@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div>
-                        <p class="text-gray-700 border-t-2 pt-4">{{ userInfo.summary }}</p>
+                        <p class="text-gray-700 border-t-2 pt-4">{{ userInfo.Summary }}</p>
                     </div>
                 </div>
 
@@ -120,34 +120,13 @@
 <script setup>
 import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
-import { ref, onMounted } from 'vue';
 
-const skills = ref([]);
-const projects = ref([]);
-const experiences = ref([]);
-const userInfo = ref([]);
+import { inject } from 'vue';
 
-onMounted(async () => {
-    try {
-        const [skillsResponse, projectsResponse, experiencesResponse, userInfoResponse] = await Promise.all([
-            fetch('/skills.json'),
-            fetch('/projects.json'),
-            fetch('/experiences.json'),
-            fetch('/userInfo.json')
-        ]);
-        const skillsData = await skillsResponse.json();
-        const projectsData = await projectsResponse.json();
-        const experiencesData = await experiencesResponse.json();
-        const userInfoData = await userInfoResponse.json();
-
-        skills.value = skillsData;
-        projects.value = projectsData;
-        experiences.value = experiencesData;
-        userInfo.value = userInfoData;
-    } catch (error) {
-        console.error(error);
-    }
-});
+const userInfo = inject('userInfo');
+const skills = inject('skills');
+const projects = inject('projects');
+const experiences = inject('experiences');
 
 </script>
 
