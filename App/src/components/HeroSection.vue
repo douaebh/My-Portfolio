@@ -28,11 +28,11 @@
                 </div>
 
                 <div class="flex-1 flex justify-center">
-                    <img src="../assets/user.png" alt="Hero Image" class="w-3/4 h-auto" />
+                    <img src="../assets/heroSection.svg" alt="Hero Image" class="w-4/5 h-auto" />
                 </div>
             </div>
         </div>
-        <div class="absolute top-0 right-0 w-1/2 z-0">
+        <div class="hidden lg:block absolute top-0 right-0 w-1/2 z-0">
             <img src="../assets/yellow-bg.svg" alt="Yellow Background" class="w-full h-auto object-cover" />
         </div>
     </div>
