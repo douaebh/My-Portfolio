@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 text-center px-6">
-        <h1 class="text-9xl font-extrabold text-primary dark:text-yellow-500">404</h1>
-        <h2 class="text-3xl font-semibold text-gray-800 dark:text-white mt-4">Oops! Page Not Found</h2>
-        <p class="text-gray-500 dark:text-gray-300 mt-2">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center px-6">
+        <h1 class="text-9xl font-extrabold text-primary">404</h1>
+        <h2 class="text-3xl font-semibold text-gray-800 mt-4">Oops! Page Not Found</h2>
+        <p class="text-gray-500 mt-2">
             The page you are looking for does not exist or has been moved.
         </p>
 
