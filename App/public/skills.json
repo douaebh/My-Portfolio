@@ -110,5 +110,12 @@
         "level": "Advanced",
         "category": "Database Management",
         "icon": "<i class='fa-solid fa-database'></i>"
+    },
+    {
+        "id": 17,
+        "name": "Wordpress",
+        "level": "Intermediate",
+        "category": "CMS",
+        "icon": "<i class='fa-brands fa-wordpress'></i>"
     }
 ]
