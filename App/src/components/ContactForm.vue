@@ -1,27 +1,27 @@
 <template>
-    <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 mt-10 mb-10">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center">Contact Me</h2>
-        <p class="text-gray-500 dark:text-gray-300 text-center mt-2">Let's get in touch! Fill out the form below.</p>
+    <div class="max-w-lg mx-auto bg-white rounded-2xl shadow-lg p-8 mt-10 mb-10">
+        <h2 class="text-3xl font-bold text-gray-900 text-center">Contact Me</h2>
+        <p class="text-gray-500 text-center mt-2">Let's get in touch! Fill out the form below.</p>
 
         <form @submit.prevent="handleSubmit" class="mt-6 space-y-4">
             <div>
-                <label for="name" class="block text-gray-700 dark:text-gray-300 font-semibold">Your Name</label>
+                <label for="name" class="block text-gray-700 font-semibold">Your Name</label>
                 <input v-model="form.name" type="text" id="name" placeholder="John Doe"
-                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
                     required />
             </div>
 
             <div>
-                <label for="email" class="block text-gray-700 dark:text-gray-300 font-semibold">Email Address</label>
+                <label for="email" class="block text-gray-700 font-semibold">Email Address</label>
                 <input v-model="form.email" type="email" id="email" placeholder="you@example.com"
-                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
                     required />
             </div>
 
             <div>
-                <label for="message" class="block text-gray-700 dark:text-gray-300 font-semibold">Your Message</label>
+                <label for="message" class="block text-gray-700 font-semibold">Your Message</label>
                 <textarea v-model="form.message" id="message" rows="4" placeholder="Type your message here..."
-                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
                     required></textarea>
             </div>
 

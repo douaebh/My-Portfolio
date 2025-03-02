@@ -12,7 +12,7 @@
             <section id="projects" class="mt-10">
                 <ProjectsCard />
             </section>
-            <section id="contact" class="mt-20 bg-gray-50 dark:bg-gray-800 py-10 px-4">
+            <section id="contact" class="mt-20 bg-gray-50 py-10 px-4">
                 <ContactForm />
             </section>
             <Footer />
