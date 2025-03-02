@@ -1,5 +1,8 @@
 <script setup>
 import { ref, provide, onMounted } from 'vue';
+import { inject } from "@vercel/analytics"
+
+inject();
 
 const skills = ref([]);
 const projects = ref([]);
