@@ -1,30 +1,41 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref, provide, onMounted } from 'vue';
+
+const skills = ref([]);
+const projects = ref([]);
+const experiences = ref([]);
+const userInfo = ref([]);
+
+onMounted(async () => {
+    try {
+        const [skillsResponse, projectsResponse, experiencesResponse, userInfoResponse] = await Promise.all([
+            fetch('/skills.json'),
+            fetch('/projects.json'),
+            fetch('/experiences.json'),
+            fetch('/userInfo.json')
+        ]);
+        const skillsData = await skillsResponse.json();
+        const projectsData = await projectsResponse.json();
+        const experiencesData = await experiencesResponse.json();
+        const userInfoData = await userInfoResponse.json();
+
+        skills.value = skillsData;
+        projects.value = projectsData;
+        experiences.value = experiencesData;
+        userInfo.value = userInfoData;
+    } catch (error) {
+        console.error(error);
+    }
+});
+
+// Provide the data to all child components
+provide('userInfo', userInfo);
+provide('skills', skills);
+provide('projects', projects);
+provide('experiences', experiences);
+
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+    <router-view />
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
