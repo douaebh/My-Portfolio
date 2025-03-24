@@ -1,35 +1,35 @@
 [
-    {
-        "id": 1,
-        "name": "Soli-LMS",
-        "description": "A Learning Management System with skill hierarchy, training modules, and administrator controls.",
-        "status": "active",
-        "demo": "#",
-        "github": "https://github.com/yourusername/soli-lms",
-        "image": "/images/lms.svg",
-        "technologies": ["Laravel", "Vue.js", "TailwindCSS", "mysql"],
-        "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
-    },
-    {
-        "id": 2,
-        "name": "Sanction Management System",
-        "description": "A system that manages sanctions based on absenteeism, with automatic checks and manual triggers.",
-        "status": "active",
-        "demo": "#",
-        "github": "https://github.com/Tribak-Ayoub/Project-fil-rouge",
-        "image": "/images/lms.svg",
-        "technologies": ["Laravel", "Vue.js", "TailwindCSS", "mysql"],
-        "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
-    },
-    {
-        "id": 3,
-        "name": "E-commerce website",
-        "description": "A Laravel 11 and Vue 3 e-commerce website.",
-        "status": "in-progress",
-        "demo": "#",
-        "github": "https://github.com/Tribak-Ayoub/E-commerce",
-        "image": "/images/e-commerce.png",
-        "technologies": ["Laravel", "Vue.js", "TailwindCSS", "mysql"],
-        "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
-    }
+  {
+    "id": 2,
+    "name": "Sanction Management System",
+    "description": "A system that manages sanctions based on absenteeism, with automatic checks and manual triggers.",
+    "status": "in-progress",
+    "demo": "#",
+    "github": "https://github.com/Tribak-Ayoub/Project-fil-rouge",
+    "image": "/images/lms.svg",
+    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "mysql"],
+    "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
+  },
+  {
+    "id": 3,
+    "name": "E-commerce website",
+    "description": "A Laravel 11 and Vue 3 e-commerce website.",
+    "status": "in-progress",
+    "demo": "#",
+    "github": "https://github.com/Tribak-Ayoub/E-commerce",
+    "image": "/images/e-commerce.png",
+    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "mysql"],
+    "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
+  },
+  {
+    "id": 4,
+    "name": "Portfolio Website",
+    "description": "A personal portfolio showcasing projects, skills, and experience, built with Vue.js and TailwindCSS.",
+    "status": "active",
+    "demo": "https://ayoub-tribak.vercel.app/",
+    "github": "https://github.com/Tribak-Ayoub/my-portfolio",
+    "image": "/images/my-portfolio.png",
+    "technologies": ["Vue.js", "TailwindCSS", "Vercel"],
+    "role": "Front-end Developer - Built a responsive portfolio with Vue.js and TailwindCSS, ensuring a smooth user experience and fast performance."
+  }
 ]
