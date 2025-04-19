@@ -161,8 +161,8 @@ const experiences = inject('experiences');
 
 const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'resume.pdf';
+    link.href = '/Tribak_Ayoub_FullStack_Developer.pdf';
+    link.download = 'Tribak_Ayoub_FullStack_Developer.pdf';
     link.click();
 };
 </script>

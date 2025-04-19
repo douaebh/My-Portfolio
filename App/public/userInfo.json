@@ -26,7 +26,7 @@
   "Educations": [
     {
       "id": 1,
-      "title": "Web & Mobile Development",
+      "title": "Web & Mobile Development - (Bootcamp)",
       "location": "SoliCode Tanger, Morocco",
       "description": "Studying Frontend & Backend Development with a focus on Laravel, Vue.js, and Kotlin for Mobile Development.",
       "start_date": "2024-09-01",
@@ -34,11 +34,11 @@
     },
     {
       "id": 2,
-      "title": "Web Development",
+      "title": "Web Development - (Bootcamp)",
       "location": "SoliCode Tanger, Morocco",
       "description": "Studied Frontend & Backend Development, focusing on PHP, JavaScript.",
       "start_date": "2023-09-01",
-      "end_date": "2024-05-01"
+      "end_date": "2024-06-01"
     },
     {
       "id": 3,
@@ -46,23 +46,16 @@
       "location": "Tanger, Morocco",
       "description": "Completed secondary education with a focus on scientific and technical studies.",
       "start_date": "2017-09-01",
-      "end_date": "2018-05-01"
+      "end_date": "2018-06-01"
     }
   ],
   "Certifications": [
     {
       "id": 1,
-      "title": "Git & GitHub Workshop",
+      "title": "Web Development",
       "issuer": "SoliCode Tanger",
-      "date": "2024-02-01",
-      "description": "Conducted a workshop on Git and GitHub, covering version control, branches, pull requests, and best practices."
-    },
-    {
-      "id": 2,
-      "title": "Fundamentals of Computer Networking Workshop",
-      "issuer": "SoliCode Tanger",
-      "date": "2024-02-15",
-      "description": "Delivered a workshop on networking concepts, including IP addressing, network models, and protocols."
+      "date": "2024-06-01",
+      "description": "Completed a comprehensive bootcamp in web development, focusing on both front-end and back-end technologies."
     }
   ],
   "AdditionalSkills": [

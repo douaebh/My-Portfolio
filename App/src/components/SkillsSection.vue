@@ -43,9 +43,9 @@
             <p class="text-gray-500 text-sm sm:text-base">
               {{ skill.category }}
             </p>
-            <p class="text-sm sm:text-base font-medium text-primary">
+            <!-- <p class="text-sm sm:text-base font-medium text-primary">
               {{ skill.level }}
-            </p>
+            </p> -->
           </div>
         </div>
 

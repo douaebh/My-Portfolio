@@ -1,6 +1,6 @@
 [
   {
-    "id": 2,
+    "id": 1,
     "name": "Sanction Management System",
     "description": "A system that manages sanctions based on absenteeism, with automatic checks and manual triggers.",
     "status": "in-progress",
@@ -11,18 +11,7 @@
     "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
   },
   {
-    "id": 3,
-    "name": "E-commerce website",
-    "description": "A Laravel 11 and Vue 3 e-commerce website.",
-    "status": "in-progress",
-    "demo": "#",
-    "github": "https://github.com/Tribak-Ayoub/E-commerce",
-    "image": "/images/e-commerce.png",
-    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "mysql"],
-    "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
-  },
-  {
-    "id": 4,
+    "id": 2,
     "name": "Portfolio Website",
     "description": "A personal portfolio showcasing projects, skills, and experience, built with Vue.js and TailwindCSS.",
     "status": "active",
@@ -31,5 +20,16 @@
     "image": "/images/my-portfolio.png",
     "technologies": ["Vue.js", "TailwindCSS", "Vercel"],
     "role": "Front-end Developer - Built a responsive portfolio with Vue.js and TailwindCSS, ensuring a smooth user experience and fast performance."
+  },
+  {
+    "id": 3,
+    "name": "Blog app",
+    "description": "A dynamic blogging platform built with Laravel 11 and Vue 3, featuring article management, comment support, modular architecture, and a clean TailwindCSS interface.",
+    "status": "in-progress",
+    "demo": "#",
+    "github": "https://github.com/Tribak-Ayoub/Blog-app",
+    "image": "/images/blog-app.png",
+    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "mysql"],
+    "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
   }
 ]
