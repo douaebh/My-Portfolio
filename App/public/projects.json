@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "name": "Blog app",
+    "name": "Blog App",
     "description": "A dynamic blogging platform built with Laravel 11 and Vue 3, featuring article management, comment support, modular architecture, and a clean TailwindCSS interface.",
     "status": "in-progress",
     "demo": "#",
