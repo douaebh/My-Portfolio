@@ -8,10 +8,10 @@
         <div v-if="projects.length" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center mt-10">
             <div v-for="project in projects" :key="project.id"
                 class="flex flex-col items-center bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-
-                <img v-if="project.image" :src="project.image" alt="Project Image"
-                    class="w-full h-56 object-cover md:rounded-t-2xl p-4" />
-
+                <div class="w-full h-56 relative">
+                    <img v-if="project.image" :src="project.image" alt="Project Image"
+                        class="w-full h-56 object-cover md:rounded-t-2xl p-4" />
+                </div>
                 <div class="p-6 w-full">
                     <h5 class="text-2xl font-extrabold text-gray-900 mb-2">{{ project.name }}</h5>
                     <span class="px-3 py-1 text-sm font-semibold rounded-lg" :class="{
