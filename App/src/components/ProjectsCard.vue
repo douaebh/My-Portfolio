@@ -1,7 +1,7 @@
 <template>
     <div class="max-w-screen-xl mx-auto px-4 py-10">
         <div class="text-center">
-            <h2 class="text-4xl font-playfair font-bold text-gray-900">My Projects</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900">My Projects</h2>
             <p class="mt-4 font-nunito text-xl text-gray-400">A showcase of my latest work</p>
         </div>
 
@@ -13,7 +13,7 @@
                         class="w-full h-56 object-cover md:rounded-t-2xl p-4" />
                 </div>
                 <div class="p-6 w-full">
-                    <h5 class="text-2xl font-extrabold text-gray-900 mb-2">{{ project.name }}</h5>
+                    <h5 class="text-xl font-extrabold text-gray-900 mb-2">{{ project.name }}</h5>
                     <span class="px-3 py-1 text-sm font-semibold rounded-lg" :class="{
                         'bg-green-100 text-green-800': project.status === 'active',
                         'bg-yellow-100 text-yellow-800': project.status === 'in-progress',
