@@ -9,12 +9,12 @@
                 </p>
 
                 <!-- Heading -->
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-gray-900 mt-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900 mt-4 mb-6">
                     Passionate Full Stack Developer
                 </h2>
 
                 <!-- About Text -->
-                <p class="text-gray-400 font-nunito text-lg sm:text-xl md:text-2xl mt-5 mb-7">
+                <p class="text-gray-400 font-nunito text-base sm:text-lg md:text-xl mt-5 mb-7">
                     {{ userInfo.About }}
                 </p>
 

@@ -19,28 +19,46 @@
                     </h1>
 
                     <!-- Description -->
-                    <p class="text-gray-400 font-nunito text-lg sm:text-xl md:text-2xl mt-5 mb-7">
+                    <p class="text-gray-400 font-nunito text-base sm:text-lg md:text-xl mt-5 mb-7">
                         A passionate web developer crafting modern web applications and innovative digital solutions.
                     </p>
 
                     <!-- Buttons & Social Links -->
                     <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-7">
 
-                        <!-- Resume Button -->
-                        <BaseButton @click="downloadResume()" :text="'Resume <i class=\'fa-solid fa-file-arrow-down ml-2\'></i>'"  title="Download Resume"
-                            btnClass="px-5 py-2 text-sm sm:text-base bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300" />
+                        <!-- Resume Dropdown Button -->
+                        <div class="relative" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+                            <!-- Button -->
+                            <BaseButton :text="'Resume <i class=\'fa-solid fa-chevron-down ml-2\'></i>'"
+                                title="Download Resume"
+                                btnClass="px-5 py-2 text-sm sm:text-base bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300" />
+
+                            <!-- Dropdown -->
+                            <div v-if="showDropdown"
+                                class="absolute z-20 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg">
+                                <button @click="downloadResume('en')"
+                                    class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">
+                                    Download Resume (EN)
+                                </button>
+                                <button @click="downloadResume('fr')"
+                                    class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">
+                                    Download Resume (FR)
+                                </button>
+                            </div>
+                        </div>
 
                         <!-- Contact Button -->
-                        <BaseButton @click="scrollToSection('contact')" text="Contact me"
+                        <BaseButton @click="scrollToSection('contact')" text="Contact me" title="Contact Me"
                             btnClass="px-5 py-2 text-sm sm:text-base border border-gray-700 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition duration-300" />
 
                         <!-- GitHub & LinkedIn Icons -->
-                        <a href="https://github.com/Tribak-Ayoub" target="_blank"
+                        <a href="https://github.com/Tribak-Ayoub" target="_blank" title="GitHub"
                             class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white text-gray-900 shadow-md hover:bg-yellow-400 hover:text-white transition duration-300">
                             <i class="fab fa-github text-lg sm:text-xl"></i>
                         </a>
 
                         <a href="https://www.linkedin.com/in/ayoub-tribak-el-yedri-064101229/" target="_blank"
+                            title="LinkedIn"
                             class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white text-gray-900 shadow-md hover:bg-yellow-400 hover:text-white transition duration-300">
                             <i class="fab fa-linkedin text-lg sm:text-xl"></i>
                         </a>
@@ -64,20 +82,42 @@
 </template>
 
 <script setup>
-import { inject } from 'vue';
+import { inject, ref } from 'vue';
 import BaseButton from './BaseButton.vue';
 
 const userInfo = inject('userInfo');
+const showDropdown = ref(false);
+let hideTimeout = null;
 
 const scrollToSection = (section) => {
     const target = document.getElementById(section);
     if (target) target.scrollIntoView({ behavior: 'smooth' });
 };
 
-const downloadResume = () => {
+const downloadResume = (lang) => {
+    let fileName = '';
+    if (lang === 'en') {
+        fileName = '/Tribak_Ayoub_FullStack_Developer_en.pdf';
+    } else if (lang === 'fr') {
+        fileName = '/Tribak_Ayoub_FullStack_Developer_fr.pdf';
+    }
+
     const link = document.createElement('a');
-    link.href = '/Tribak_Ayoub_FullStack_Developer.pdf';
-    link.download = 'Tribak_Ayoub_FullStack_Developer.pdf';
+    link.href = fileName;
+    link.download = fileName.split('/').pop();
     link.click();
+    showDropdown.value = false;
+};
+
+// Dropdown show/hide with delay
+const handleMouseEnter = () => {
+    clearTimeout(hideTimeout);
+    showDropdown.value = true;
+};
+
+const handleMouseLeave = () => {
+    hideTimeout = setTimeout(() => {
+        showDropdown.value = false;
+    }, 200); // 200ms delay before hiding
 };
 </script>

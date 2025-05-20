@@ -5,9 +5,26 @@
             <section id="resume" class="container mx-auto p-8">
                 <div class="flex items-center justify-center space-x-4">
                     <h1 class="text-4xl font-bold mb-6 text-center">My Resume</h1>
-                    <a @click="downloadResume()"  download class="mb-6 cursor-pointer" title="Download Resume">
-                        <i class="fa-solid fa-file-arrow-down text-primary text-4xl"></i>
-                    </a>
+
+                    <div class="relative mb-6" @mouseenter="showDropdown = true" @mouseleave="hideDropdownWithDelay">
+                        <i class="fa-solid fa-file-arrow-down text-primary text-4xl cursor-pointer"
+                            title="Download Resume"></i>
+
+                        <transition name="fade">
+                            <ul v-if="showDropdown"
+                                class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-lg border rounded-lg w-48 z-10">
+                                <li @click="downloadResume('en')"
+                                    class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+                                    Download Resume (EN)
+                                </li>
+                                <li @click="downloadResume('fr')"
+                                    class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+                                    Download Resume (FR)
+                                </li>
+                            </ul>
+                        </transition>
+                    </div>
+
                 </div>
 
                 <!-- Profile Section -->
@@ -152,19 +169,36 @@
 import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
 
-import { inject } from 'vue';
+import { inject, ref } from 'vue';
 
 const userInfo = inject('userInfo');
 const skills = inject('skills');
 const projects = inject('projects');
 const experiences = inject('experiences');
+const showDropdown = ref(false);
+let timeoutId;
 
-const downloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/Tribak_Ayoub_FullStack_Developer.pdf';
-    link.download = 'Tribak_Ayoub_FullStack_Developer.pdf';
-    link.click();
+const hideDropdownWithDelay = () => {
+    timeoutId = setTimeout(() => {
+        showDropdown.value = false;
+    }, 300); // 300ms delay
 };
+
+const downloadResume = (lang) => {
+    const fileMap = {
+        en: '/Tribak_Ayoub_FullStack_Developer_en.pdf',
+        fr: '/Tribak_Ayoub_FullStack_Developer_fr.pdf',
+    };
+
+    const link = document.createElement('a');
+    link.href = fileMap[lang];
+    link.download = fileMap[lang].split('/').pop();
+    link.click();
+
+    showDropdown.value = false;
+};
+
+
 </script>
 
 <style scoped>
