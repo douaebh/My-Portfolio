@@ -1,6 +1,6 @@
 <template>
     <div class="max-w-lg mx-auto bg-white rounded-2xl shadow-lg p-8 py-10 mt-10 mb-10">
-        <h2 class="text-3xl font-playfair font-bold text-gray-900 text-center">Contact Me</h2>
+        <h2 class="text-3xl font-bold text-gray-900 text-center">Contact Me</h2>
         <p class="text-gray-500 text-center mt-2">Let's get in touch! Fill out the form below.</p>
 
         <!-- Contact Form -->
