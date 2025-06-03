@@ -4,12 +4,13 @@
 
       <!-- Section Header -->
       <div class="text-center">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
           My Skills
         </h2>
         <p class="mt-4 font-nunito text-xl  text-gray-400">
           Technologies and Tools I'm proficient in
         </p>
+        <div class="w-24 h-1 bg-gradient-to-r from-[#FDC435] to-[#FB923C] mx-auto mt-6 rounded-full"></div>
       </div>
 
       <!-- Skills Grid -->

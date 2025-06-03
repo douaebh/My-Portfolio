@@ -8,7 +8,8 @@
                 <div class="lg:w-1/2 text-center lg:text-left">
 
                     <!-- Job Title -->
-                    <p class="text-primary font-nunito font-semibold text-lg sm:text-xl md:text-2xl uppercase">
+                    <p
+                        class="bg-gradient-to-r from-[#FDC435] to-[#FB923C] bg-clip-text text-transparent font-nunito font-semibold text-lg sm:text-xl md:text-2xl uppercase">
                         Full Stack Developer
                     </p>
 
@@ -31,7 +32,7 @@
                             <!-- Button -->
                             <BaseButton :text="'Resume <i class=\'fa-solid fa-chevron-down ml-2\'></i>'"
                                 title="Download Resume"
-                                btnClass="px-5 py-2 text-sm sm:text-base bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300" />
+                                btnClass="px-5 py-2 text-sm sm:text-base  bg-gradient-to-r from-[#FDC435] to-[#FB923C] hover:from-[#FBBF24] hover:to-[#F97316] text-white font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300" />
 
                             <!-- Dropdown -->
                             <div v-if="showDropdown"
