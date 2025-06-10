@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "name": "Sanction Management System",
-    "description": "A system that manages sanctions based on absenteeism, with automatic checks and manual triggers.",
+    "name": "Sanction Management Module - SOLI-LMS",
+    "description": "A dedicated module within the SOLI-LMS system for managing learner sanctions based on absenteeism. It supports automatic daily checks, manual triggers, rule customization, statistical dashboards, and sanction history.",
     "status": "in-progress",
     "demo": "#",
     "github": "https://github.com/Tribak-Ayoub/Project-fil-rouge",
-    "thumbnail": "/images/lms.svg",
-    "video": "/videos/lms.mp4",
-    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "mysql"],
-    "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
+    "thumbnail": "/images/sanctions.svg",
+    "video": "/videos/sanctions.mp4",
+    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "MySQL"],
+    "role": "Full-stack Developer – Responsible for developing the Sanction Management module within SOLI-LMS. Handled Laravel-based logic for rule-driven sanction calculations, Vue.js integration for the dashboard, and MySQL schema design."
   },
   {
     "id": 2,
