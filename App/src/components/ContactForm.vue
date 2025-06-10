@@ -27,7 +27,7 @@
             </div>
 
             <button type="submit" :disabled="loading"
-                class="w-full py-3 bg-primary text-white font-bold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed">
+                class="w-full py-3 bg-gradient-to-r from-[#FDC435] to-[#FB923C] text-white font-bold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed">
                 <svg v-if="loading" class="animate-spin h-5 w-5 mr-3 text-white" fill="none" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
