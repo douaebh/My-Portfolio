@@ -1,6 +1,5 @@
 <template>
-    <nav class="shadow-sm bg-white border-gray-200 fixed top-0 left-0 right-0 w-full z-20"
-        aria-label="Main navigation">
+    <nav class="shadow-sm bg-white border-gray-200 fixed top-0 left-0 right-0 w-full z-20" aria-label="Main navigation">
         <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="self-center text-lg font-semibold whitespace-nowrap text-black">Ayoub Tribak</span>
@@ -33,13 +32,13 @@
                             :class="{ 'active-link': activeSection === 'projects' }">Projects</button>
                     </li>
                     <li>
+                        <button @click="scrollToSection('contact')" class="nav-link text-black"
+                            :class="{ 'active-link': activeSection === 'contact' }">Contact</button>
+                    </li>
+                    <li>
                         <router-link to="/resume" class="nav-link text-black"
                             :class="{ 'active-link': activeSection === '/resume' }"
                             @click="scrollToSection('/resume')">Resume</router-link>
-                    </li>
-                    <li>
-                        <button @click="scrollToSection('contact')" class="nav-link text-black"
-                            :class="{ 'active-link': activeSection === 'contact' }">Contact</button>
                     </li>
                 </ul>
             </div>

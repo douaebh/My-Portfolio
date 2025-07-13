@@ -39,7 +39,7 @@
     "name": "MySQL",
     "level": "Advanced",
     "category": "Database Management",
-    "icon": "<i class='fa-solid fa-database'></i>"
+    "icon": "<img src='/icons/MySQL.svg' alt='MySQL Icon' style='width: 2.75rem; height: 2.75rem;' class='mx-auto' fill='#FDC435'/>"
   },
   {
     "id": 7,
@@ -108,7 +108,7 @@
     "id": 16,
     "name": "SQL",
     "level": "Advanced",
-    "category": "Database Management",
+    "category": "Query Language",
     "icon": "<i class='fa-solid fa-database'></i>"
   },
   {
@@ -124,5 +124,40 @@
     "level": "Beginner",
     "category": "Mobile Development",
     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' style='width: 2.75rem; height: 2.75rem;' class='mx-auto'> <rect width='256' height='256' fill='#FDC435' /> <polygon fill='#ffffff' points='256,0 128,128 256,256' /> <polygon fill='#FDC435' points='0,0 128,128 0,256' /> </svg>"
+  },
+  {
+    "id": 19,
+    "name": "Python",
+    "level": "Intermediate",
+    "category": "Backend Development",
+    "icon": "<i class='fa-brands fa-python'></i>"
+  },
+  {
+    "id": 20,
+    "name": "FastAPI",
+    "level": "Beginner",
+    "category": "Backend Development",
+    "icon": "<img src='/icons/FastAPI.svg' alt='FastAPI Icon' style='width: 2.75rem; height: 2.75rem;' class='mx-auto' fill='#FDC435'/>"
+  },
+  {
+    "id": 21,
+    "name": "PostgreSQL",
+    "level": "Beginner",
+    "category": "Database Management",
+    "icon": "<img src='/icons/PostgreSQL.svg' alt='PostgreSQL Icon' style='width: 2.75rem; height: 2.75rem;' class='mx-auto' />"
+  },
+  {
+    "id": 23,
+    "name": "Inertia.js",
+    "level": "Intermediate",
+    "category": "Frontend Development",
+    "icon": "<i class='fa-solid fa-code-merge'></i>"
+  },
+  {
+    "id": 24,
+    "name": "REST API",
+    "level": "Intermediate",
+    "category": "Web Services",
+    "icon": "<i class='fa-solid fa-plug'></i>"
   }
 ]

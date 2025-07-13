@@ -1,38 +1,57 @@
 [
   {
     "id": 1,
-    "name": "Sanction Management Module - SOLI-LMS",
-    "description": "A dedicated module within the SOLI-LMS system for managing learner sanctions based on absenteeism. It supports automatic daily checks, manual triggers, rule customization, statistical dashboards, and sanction history.",
+    "name": "AI-Powered Phone Lead Qualification System",
+    "description": "An AI-driven telephony system that qualifies leads via phone by combining SIP integration, voice interaction (STT, NLP, TTS), and real-time API communication between Asterisk, Python microservices, and Laravel.",
     "status": "in-progress",
     "demo": "#",
-    "github": "https://github.com/Tribak-Ayoub/Project-fil-rouge",
-    "thumbnail": "/images/sanctions.svg",
-    "video": "/videos/sanctions.mp4",
-    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "MySQL"],
-    "role": "Full-stack Developer – Responsible for developing the Sanction Management module within SOLI-LMS. Handled Laravel-based logic for rule-driven sanction calculations, Vue.js integration for the dashboard, and MySQL schema design."
+    "github": "https://github.com/Tribak-Ayoub/AI-Voice-Assistant",
+    "thumbnail": "/images/ai-call-system.png",
+    "video": "/videos/ai-call-system.mp4",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "Asterisk",
+      "Laravel",
+      "Vue.js",
+      "PostgreSQL"
+    ],
+    "role": "Full-stack Developer – Developing Python microservices for speech processing, integrating FastAPI endpoints with Laravel, and building a Vue.js dashboard to monitor and manage call activity and lead qualification results."
   },
   {
     "id": 2,
+    "name": "Sanction Management Module – SOLI-LMS",
+    "description": "A fully integrated module within SOLI-LMS for automating the management of learner sanctions related to absenteeism. Features include customizable rule-based sanction calculations, daily automatic checks, manual triggers, visual dashboards, and a detailed sanction history log.",
+    "status": "completed",
+    "demo": "#",
+    "github": "https://github.com/Tribak-Ayoub/Project-fil-rouge",
+    "thumbnail": "/images/sanctions.png",
+    "video": "/videos/sanctions.mp4",
+    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "MySQL", "Inertia.js"],
+    "role": "Full-stack Developer – Led the development of the Sanction Management module, including logic implementation in Laravel, dynamic dashboard integration using Vue.js, and MySQL database design for tracking rule-based sanctions."
+  },
+  {
+    "id": 3,
+    "name": "Blog App",
+    "description": "A modular blog platform featuring CRUD article management, nested commenting, RESTful APIs, and a clean user interface. Built using Laravel for the backend and Vue.js for the frontend.",
+    "status": "completed",
+    "demo": "#",
+    "github": "https://github.com/Tribak-Ayoub/Blog-app",
+    "thumbnail": "/images/blog-app.png",
+    "video": "/videos/blog-app.mp4",
+    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "MySQL", "REST API"],
+    "role": "Full-stack Developer – Built the back-end logic and API with Laravel, integrated Vue.js for the UI, and structured the project with a scalable modular architecture."
+  },
+  {
+    "id": 4,
     "name": "Portfolio Website",
-    "description": "A personal portfolio showcasing projects, skills, and experience, built with Vue.js and TailwindCSS.",
+    "description": "A sleek and responsive personal portfolio showcasing projects, technical skills, and development experience. Built with Vue.js and TailwindCSS, optimized for performance and accessibility.",
     "status": "active",
     "demo": "https://ayoub-tribak.vercel.app/",
     "github": "https://github.com/Tribak-Ayoub/my-portfolio",
     "thumbnail": "/images/my-portfolio.png",
     "video": "/videos/my-portfolio.mp4",
     "technologies": ["Vue.js", "TailwindCSS", "Vercel"],
-    "role": "Front-end Developer - Built a responsive portfolio with Vue.js and TailwindCSS, ensuring a smooth user experience and fast performance."
-  },
-  {
-    "id": 3,
-    "name": "Blog App",
-    "description": "A dynamic blogging platform built with Laravel 11 and Vue 3, featuring article management, comment support, modular architecture, and a clean TailwindCSS interface.",
-    "status": "completed",
-    "demo": "#",
-    "github": "https://github.com/Tribak-Ayoub/Blog-app",
-    "thumbnail": "/images/blog-app.png",
-    "video": "/videos/blog-app.mp4",
-    "technologies": ["Laravel", "Vue.js", "TailwindCSS", "mysql"],
-    "role": "Full-stack Developer - Responsible for building the back-end with Laravel, integrating it with Vue.js for dynamic UI, and ensuring proper database management."
+    "role": "Front-end Developer – Designed and developed the portfolio UI using Vue.js and TailwindCSS, ensuring fast load times and a smooth user experience across devices."
   }
 ]

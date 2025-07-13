@@ -1,15 +1,24 @@
 [
   {
     "id": 1,
+    "title": "Full Stack Developer Intern – AI Voice Assistant Project",
+    "company": "EXCELEA",
+    "location": "Tanger, Morocco",
+    "start_date": "2025-07-01",
+    "end_date": "Present",
+    "description": "Contributed to the development of an AI-powered phone lead qualification system. Built Python microservices with FastAPI for speech-to-text, intent recognition, and text-to-speech. Integrated the backend with Laravel and Asterisk, and developed a Vue.js dashboard for monitoring real-time call and lead activity."
+  },
+  {
+    "id": 2,
     "title": "Full Stack Developer - Student Projects",
     "company": "SoliCode Tanger",
     "location": "Tanger, Morocco",
     "start_date": "2024-09-01",
-    "end_date": "Present",
-    "description": "Focusing on both web and mobile development in the second year. Working with technologies like Laravel, Vue.js, Kotlin for mobile apps, and database management. Building dynamic web and mobile applications while improving coding practices and collaborating on team projects."
+    "end_date": "2025-07-27",
+    "description": "Graduated from SoliCode’s full-stack development program with hands-on experience in building real-world applications. Key projects include the Sanction Management Module for SOLI-LMS (Laravel, Vue.js, MySQL), a modular Blog App with REST API and nested comments, and a responsive personal Portfolio Website. Applied clean architecture, CI/CD, Git workflows, and modern UI/UX practices throughout the program."
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Workshop Contributor - Networks and Networking Fundamentals for IT Students",
     "company": "SoliCode Tanger",
     "location": "Tanger, Morocco",
@@ -18,7 +27,7 @@
     "description": "Worked as part of a team to deliver a workshop on computer networking fundamentals. Helped prepare and present topics such as network types, IP addressing, and networking protocols for IT students."
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Workshop Contributor - Git and GitHub for IT Students",
     "company": "SoliCode Tanger",
     "location": "Tanger, Morocco",
@@ -27,21 +36,12 @@
     "description": "Contributed to a team workshop on Git and GitHub for IT students. Collaborated with team members to cover essential topics such as version control, branching, pull requests, and collaboration best practices."
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "WordPress Developer Intern",
     "company": "HODM",
     "location": "Tanger, Morocco",
     "start_date": "2024-06-01",
     "end_date": "2024-07-01",
     "description": "Assisted in developing and maintaining WordPress websites for clients. Customized themes and plugins, worked on the back-end, and ensured responsive design across platforms. Gained experience in SEO optimization and troubleshooting WordPress issues."
-  },
-  {
-    "id": 5,
-    "title": "Web Developer - Student Projects",
-    "company": "SoliCode Tanger",
-    "location": "Tanger, Morocco",
-    "start_date": "2023-09-01",
-    "end_date": "2024-06-01",
-    "description": "Completed various web development projects as part of academic studies, including front-end and back-end technologies such as HTML, CSS, PHP, and JavaScript. Worked on deploying web applications using GitHub Pages."
   }
 ]

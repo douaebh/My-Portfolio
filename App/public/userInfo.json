@@ -5,10 +5,10 @@
   "location": "Tanger, Morocco",
   "Email": "tribak.elyedri.ayoub@gmail.com",
   "Phone": "+212 644 419 837",
-  "LinkedIn": "https://www.linkedin.com/in/ayoub-tribak-el-yedri-064101229/",
+  "LinkedIn": "https://www.linkedin.com/in/tribak-ayoub",
   "Github": "https://github.com/Tribak-Ayoub",
-  "Summary": "Passionate Full Stack Developer with experience in Laravel and Vue.js. Skilled in building web and mobile applications, integrating databases, and working with modern frameworks. Currently studying Web & Mobile Development at SoliCode Tanger.",
-  "About": "I'm Ayoub Tribak, a passionate Full Stack Developer with a strong foundation in Laravel, Vue.js, and modern web technologies. With a deep focus on clean architecture, user-friendly UI, and efficient database management, I specialize in building scalable web applications, e-commerce platforms, and dashboards. My work emphasizes problem-solving, automation, and enhancing user experience. Whether it's structuring a Git workflow for collaborative projects or developing innovative digital solutions, I strive to create meaningful and impactful software. I'm always eager to learn, experiment, and push the boundaries of what technology can achieve.",
+  "Summary": "Resourceful Full Stack Developer with a strong background in Laravel, Vue.js, and Python microservices. Skilled in building scalable, modular web applications, automating workflows, and deploying real-world solutions. Recent graduate of SoliCode Tanger, now focused on blending AI and telephony through voice-driven lead qualification systems.",
+  "About": "I'm Ayoub Tribak, a Full Stack Developer passionate about building impactful, real-world software. I specialize in Laravel, Vue.js, TailwindCSS, and database systems like MySQL and PostgreSQL. My projects include sanction management and AI-powered voice assistants with Asterisk + FastAPI. As a SoliCode Tanger graduate, I’ve led full-stack development with Git, REST APIs, CI/CD, and modern UIs. I value clean code, continuous learning, and creating user-focused, scalable digital solutions.",
   "Languages": [
     {
       "name": "Arabic",
@@ -26,23 +26,31 @@
   "Educations": [
     {
       "id": 1,
-      "title": "Web & Mobile Development - (Bootcamp)",
+      "title": "Web & Mobile Development Training - (Bootcamp)",
       "location": "SoliCode Tanger, Morocco",
       "description": "Studying Frontend & Backend Development with a focus on Laravel, Vue.js, and Kotlin for Mobile Development.",
       "start_date": "2024-09-01",
-      "end_date": "Present"
+      "end_date": "2025-07-27"
     },
     {
       "id": 2,
-      "title": "Web Development - (Bootcamp)",
+      "title": "Web Development Training - (Bootcamp)",
       "location": "SoliCode Tanger, Morocco",
       "description": "Studied Frontend & Backend Development, focusing on PHP, JavaScript.",
       "start_date": "2023-09-01",
-      "end_date": "2024-06-01"
+      "end_date": "2024-07-27"
     },
     {
       "id": 3,
-      "title": "High School Diploma (Baccalaureate)",
+      "title": "Undergraduate Studies in Fundamental Physics",
+      "location": "FS Tetouan, Morocco",
+      "description": "Two-year academic program focused on fundamental physics.",
+      "start_date": "2019-09-01",
+      "end_date": "2021-02-01"
+    },
+    {
+      "id": 4,
+      "title": "High School Diploma in Physical Sciences",
       "location": "Tanger, Morocco",
       "description": "Completed secondary education with a focus on scientific and technical studies.",
       "start_date": "2017-09-01",
@@ -54,8 +62,15 @@
       "id": 1,
       "title": "Web Development",
       "issuer": "SoliCode Tanger",
-      "date": "2024-06-01",
+      "date": "2024-07-27",
       "description": "Completed a comprehensive bootcamp in web development, focusing on both front-end and back-end technologies."
+    },
+    {
+      "id": 2,
+      "title": "Web & Mobile Development",
+      "issuer": "SoliCode Tanger",
+      "date": "2025-07-27",
+      "description": "Completed an advanced bootcamp in web and mobile development, focusing on Laravel, Vue.js, and Kotlin."
     }
   ],
   "AdditionalSkills": [
