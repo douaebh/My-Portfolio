@@ -101,8 +101,8 @@
                             <li v-for="project in projects" :key="project.id" class="border-b-2 pb-2">
                                 <p class="font-medium">{{ project.name }}</p>
                                 <p class="text-sm text-gray-500 mb-3">{{ project.description }}</p>
-                                <p class="text-sm text-gray-500"><strong>Role:</strong> {{ project.role }}</p>
-                                <p class="text-sm text-gray-500"><strong>Technologies:</strong></p>
+                                <p class="text-sm text-gray-500 mb-3"><strong>Role:</strong> {{ project.role }}</p>
+                                <p class="text-sm text-gray-500 mb-2"><strong>Technologies:</strong></p>
                                 <span v-for="tech in project.technologies" :key="tech"
                                     class="text-sm bg-gray-200 px-2 py-1 rounded inline-flex mr-1 mb-1">{{ tech
                                     }}</span>

@@ -13,7 +13,7 @@
                 class="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white rounded-xl">
 
                 <!-- Video Thumbnail -->
-                <div class="relative h-56 overflow-hidden cursor-pointer bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-xl"
+                <div class="relative aspect-[16/9] overflow-hidden cursor-pointer bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-xl"
                     @click="openVideo(project.video)">
                     <img v-if="project.thumbnail" :src="project.thumbnail" :alt="`${project.name} preview`"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -40,13 +40,27 @@
 
                 <!-- Content -->
                 <div class="p-6">
-                    <h3
-                        class="text-xl font-bold text-gray-900 mb-3">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
                         {{ project.name }}
                     </h3>
 
-                    <p class="text-gray-600 mb-4 leading-relaxed line-clamp-3">
-                        {{ project.description || 'No description available' }}
+                    <!-- Description with "Read more" appended -->
+                    <p class="text-gray-600 mb-2 leading-relaxed">
+                        <template v-if="expandedDescriptions[project.id]">
+                            {{ project.description }}
+                            <button @click="toggleDescription(project.id)"
+                                class="text-sm text-amber-500 hover:underline ml-2">
+                                Show less
+                            </button>
+                        </template>
+
+                        <template v-else>
+                            {{ truncatedText(project.description, 100) }}...
+                            <button @click="toggleDescription(project.id)"
+                                class="text-sm text-amber-500 hover:underline ml-1">
+                                Show more
+                            </button>
+                        </template>
                     </p>
 
                     <!-- Technologies -->
@@ -126,11 +140,12 @@
 
 <script setup>
 import { ref, inject } from 'vue'
-
 const projects = inject('projects', null)
 
 const showModal = ref(false)
 const currentVideo = ref(null)
+
+const expandedDescriptions = ref({}) // project.id => true/false
 
 // Status configuration
 const statusConfig = {
@@ -168,6 +183,15 @@ function closeModal() {
     showModal.value = false
     // Restore body scroll
     document.body.style.overflow = 'auto'
+}
+
+function toggleDescription(id) {
+    expandedDescriptions.value[id] = !expandedDescriptions.value[id]
+}
+
+function truncatedText(text, length) {
+    if (!text) return 'No description available'
+    return text.length > length ? text.slice(0, length) : text
 }
 
 // Cleanup on unmount
