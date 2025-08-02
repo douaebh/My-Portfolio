@@ -1,255 +1,437 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between h-16">
-          <div class="font-bold text-xl text-gray-900">Douae Bouhaja</div>
-          
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex space-x-8">
-            <button
-              v-for="item in navigation"
-              :key="item.id"
-              @click="scrollToSection(item.id)"
-              :class="[
-                'text-sm font-medium transition-colors hover:text-blue-600',
-                activeSection === item.id ? 'text-blue-600' : 'text-gray-600'
-              ]"
-            >
-              {{ item.label }}
-            </button>
-          </div>
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-pink-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <!-- Douae Bouhaja Logo -->
+      <h1 
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
+        class="text-2xl font-bold text-pink-800 animate-fade-in hover:text-pink-600 transition-colors cursor-pointer">
+        Douae Bouhaja
+      </h1>
 
-          <div class="flex items-center gap-4">
-            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center gap-2">
-              <DownloadIcon class="w-4 h-4" />
-              CV
-            </button>
-            
-            <!-- Mobile Menu Button -->
-            <button
-              class="md:hidden"
-              @click="mobileMenuOpen = !mobileMenuOpen"
-            >
-              <MenuIcon v-if="!mobileMenuOpen" class="w-6 h-6" />
-              <XIcon v-else class="w-6 h-6" />
-            </button>
-          </div>
-        </div>
+      <!-- Navigation Links -->
+      <div class="hidden md:flex space-x-6">
+        <a
+          onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })"
+          class="text-pink-700 hover:text-pink-900 hover:scale-105 transition-all duration-300 cursor-pointer"
+        >À propos</a>
 
-        <!-- Mobile Navigation -->
-        <div v-if="mobileMenuOpen" class="md:hidden py-4 border-t border-gray-200">
-          <button
-            v-for="item in navigation"
-            :key="item.id"
-            @click="scrollToSection(item.id)"
-            :class="[
-              'block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:text-blue-600',
-              activeSection === item.id ? 'text-blue-600' : 'text-gray-600'
-            ]"
-          >
-            {{ item.label }}
-          </button>
-        </div>
+         <a
+          onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })"
+          class="text-pink-700 hover:text-pink-900 hover:scale-105 transition-all duration-300 cursor-pointer"
+        >Portfolio</a>
+
+        <a
+          onclick="document.getElementById('education').scrollIntoView({ behavior: 'smooth' })"
+          class="text-pink-700 hover:text-pink-900 hover:scale-105 transition-all duration-300 cursor-pointer"
+        >Formation</a>
+
+       
+
+        <a
+          onclick="document.getElementById('skills').scrollIntoView({ behavior: 'smooth' })"
+          class="text-pink-700 hover:text-pink-900 hover:scale-105 transition-all duration-300 cursor-pointer"
+        >Compétences</a>
+
+        <a
+          onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+          class="text-pink-700 hover:text-pink-900 hover:scale-105 transition-all duration-300 cursor-pointer"
+        >Contact</a>
       </div>
-    </nav>
+    </div>
+  </div>
+</nav>
+
+
 
     <!-- Hero Section -->
-    <section id="home" class="pt-16 pb-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center py-20">
-          <div class="mb-8">
-            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center border-4 border-white shadow-lg">
-              <span class="text-4xl font-bold text-blue-600">DB</span>
-            </div>
+    <section class="pt-24 pb-16 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 animate-slide-up">
+          <div class="relative inline-block mb-8">
           </div>
-          <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">Douae Bouhaja</h1>
-          <p class="text-xl lg:text-2xl text-gray-600 mb-4">Développeuse Full-Stack</p>
-          <p class="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
-            Passionnée par le développement web moderne et les solutions innovantes. 
-            Spécialisée en Vue.js, Laravel et technologies full-stack.
+          <h1 class="text-5xl md:text-7xl font-bold text-gray-800 mb-4 hover:text-pink-700 transition-colors duration-500">
+            Douae <span class="text-pink-600 hover:text-pink-500 transition-colors">Bouhaja</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Développeuse Full-Stack passionnée | Créatrice d'expériences digitales | 20 ans
           </p>
-          <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <div class="flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2">
-              <CalendarIcon class="w-4 h-4 text-gray-600" />
-              <span class="text-gray-700">20 ans</span>
+          <div class="flex flex-wrap justify-center gap-4 text-gray-600 mb-8">
+            <div class="flex items-center gap-2 bg-white/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
+              <MapPin class="w-5 h-5 text-pink-600" />
+              <span>Gzenaya, Tanger, Maroc</span>
             </div>
-            <div class="flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2">
-              <MapPinIcon class="w-4 h-4 text-gray-600" />
-              <span class="text-gray-700">Tanger, Maroc</span>
+            <div class="flex items-center gap-2 bg-white/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
+              <Calendar class="w-5 h-5 text-pink-600" />
+              <span>18/06/2005</span>
             </div>
           </div>
-          <div class="flex flex-wrap justify-center gap-4">
-            <button 
-              @click="scrollToSection('contact')"
-              class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors"
-            >
-              <MailIcon class="w-4 h-4" />
-              Me contacter
-            </button>
-            <button class="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors">
-              <GithubIcon class="w-4 h-4" />
-              GitHub
-            </button>
-          </div>
+          
+          <!-- CV Download Button -->
+          <div class="flex justify-center gap-4">
+  <!-- Bouton Télécharger CV -->
+  <button class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 hover:from-pink-600 hover:to-rose-600 transition-all duration-300 flex items-center gap-3">
+    <Download class="w-5 h-5" />
+    Télécharger CV
+  </button>
+
+  <!-- Bouton Me Contacter -->
+  <a href="#contact" class="bg-white text-pink-600 border-2 border-pink-500 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 hover:bg-pink-50 transition-all duration-300 flex items-center gap-3">
+    <MessageCircle class="w-5 h-5" />
+    Me Contacter
+  </a>
+</div>
+
         </div>
       </div>
     </section>
 
-   
-   
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-white/60">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 animate-fade-in hover:text-pink-700 transition-colors">
+      À propos de moi
+    </h2>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      
+      <!-- Texte principal -->
+      <div class="animate-slide-left">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6 hover:text-gray-800 transition-colors">
+          Passionnée par le développement logiciel et le design d’interfaces, 
+          je me spécialise dans la création d’expériences digitales innovantes et intuitives. 
+          Mon approche allie créativité, expertise technique et sens du détail.
+        </p>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Compétences techniques</h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div
-              v-for="(category, index) in skillCategories"
-              :key="index"
-              class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
-            >
-              <div class="flex items-center gap-3 mb-4">
-                <div :class="[
-                  'w-10 h-10 rounded-lg flex items-center justify-center',
-                  `bg-${category.color}-100`
-                ]">
-                  <component :is="category.icon" :class="`w-5 h-5 text-${category.color}-600`" />
-                </div>
-                <h3 class="font-semibold text-gray-900">{{ category.title }}</h3>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6 hover:text-gray-800 transition-colors">
+          Actuellement en <span class="font-semibold text-pink-600">stage</span> au sein du département IT 
+          chez <span class="font-semibold text-rose-600">Exelea</span>, je mets en pratique mes compétences 
+          en développement et en conception d’interfaces dans un environnement professionnel exigeant.
+        </p>
+
+        <p class="text-lg text-gray-700 leading-relaxed mb-6 hover:text-gray-800 transition-colors">
+          En parallèle, je poursuis le programme intensif <span class="font-semibold text-purple-600">ALX</span> 
+          en partenariat avec <span class="font-semibold text-purple-600">Holberton School</span>, 
+          ce qui me permet de renforcer continuellement mes connaissances en programmation 
+          et en design d’expériences utilisateur.
+        </p>
+
+        <!-- Tags de compétences -->
+        <div class="flex flex-wrap gap-3 mt-4">
+          <span class="bg-pink-100 text-pink-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-pink-200 hover:scale-105 transition-all duration-300 cursor-pointer">UI/UX Design</span>
+          <span class="bg-rose-100 text-rose-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-rose-200 hover:scale-105 transition-all duration-300 cursor-pointer">Développement Mobile</span>
+          <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-200 hover:scale-105 transition-all duration-300 cursor-pointer">Laravel & Vue.js</span>
+          <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-indigo-200 hover:scale-105 transition-all duration-300 cursor-pointer">Apprentissage Autodidacte</span>
+        </div>
+      </div>
+
+      <!-- Centres d'intérêt -->
+      <div class="animate-slide-right">
+        <div class="bg-gradient-to-br from-pink-100 to-rose-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-6">Centres d'intérêt</h3>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/50 transition-all duration-300 cursor-pointer">
+              <div class="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center">
+                <Palette class="w-5 h-5 text-pink-600" />
               </div>
-              <div class="space-y-2">
-                <div
-                  v-for="skill in category.skills"
-                  :key="skill"
-                  class="flex items-center justify-between"
-                >
-                  <span class="text-gray-700">{{ skill }}</span>
-                  <div class="w-2 h-2 rounded-full bg-gray-300"></div>
-                </div>
+              <span class="text-gray-700 font-medium">Design d’interfaces (UI/UX)</span>
+            </div>
+            <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/50 transition-all duration-300 cursor-pointer">
+              <div class="w-10 h-10 bg-rose-200 rounded-full flex items-center justify-center">
+                <Smartphone class="w-5 h-5 text-rose-600" />
               </div>
+              <span class="text-gray-700 font-medium">Développement mobile</span>
+            </div>
+            <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/50 transition-all duration-300 cursor-pointer">
+              <div class="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center">
+                <BookOpen class="w-5 h-5 text-purple-600" />
+              </div>
+              <span class="text-gray-700 font-medium">Lecture et apprentissage continu</span>
+            </div>
+            <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/50 transition-all duration-300 cursor-pointer">
+              <div class="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center">
+                <Heart class="w-5 h-5 text-pink-600" />
+              </div>
+              <span class="text-gray-700 font-medium">Animaux, en particulier les chats 🐾</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 animate-fade-in hover:text-pink-700 transition-colors">Portfolio</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Hotel Management Project -->
+      <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-500 group">
+        <div class="h-48 bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center">
+          <Building class="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-pink-600 transition-colors">Système de Gestion d'Hôtel</h3>
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+            Application complète développée en JavaFX avec interface moderne, gestion des réservations et base de données MySQL.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs font-medium">JavaFX</span>
+            <span class="bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-xs font-medium">CSS</span>
+            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
+          </div>
+          <a href="https://github.com/douaebh?tab=repositories" target="_blank" class="block">
+            <button class="w-full bg-pink-500 text-white py-2 rounded-xl hover:bg-pink-600 transition-colors duration-300">
+              Voir le projet
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Web Development Project -->
+      <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-500 group">
+        <div class="h-48 bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center">
+          <Monitor class="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-pink-600 transition-colors">Applications Web Modernes</h3>
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+            Développement d'interfaces utilisateur responsives avec Vue.js et Tailwind CSS, optimisées pour tous les appareils.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs font-medium">Vue.js</span>
+            <span class="bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-xs font-medium">Tailwind</span>
+            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">JavaScript</span>
+          </div>
+          <a href="https://github.com/douaebh?tab=repositories" target="_blank" class="block">
+            <button class="w-full bg-rose-500 text-white py-2 rounded-xl hover:bg-rose-600 transition-colors duration-300">
+              Voir le projet
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Development Project -->
+      <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-500 group">
+        <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+          <Smartphone class="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-pink-600 transition-colors">Design UI/UX Mobile</h3>
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+            Création de designs d'interfaces mobiles intuitifs et esthétiques, centrés sur l'expérience utilisateur.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs font-medium">UI Design</span>
+            <span class="bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-xs font-medium">UX Research</span>
+            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">Prototyping</span>
+          </div>
+          <a href="https://github.com/douaebh?tab=repositories" target="_blank" class="block">
+            <button class="w-full bg-purple-500 text-white py-2 rounded-xl hover:bg-purple-600 transition-colors duration-300">
+              Voir le projet
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!-- AI-Lead Project -->
+     <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-500 group">
+  <div class="h-48 bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center">
+    <Brain class="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">AI-Lead Project</h3>
+    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+      Projet d'intelligence artificielle avancé intégrant Laravel, Vue.js, Tailwind et Inertia pour une expérience web moderne.
+    </p>
+    <div class="flex flex-wrap gap-2 mb-4">
+      <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">Laravel</span>
+      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Vue.js</span>
+      <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs font-medium">Tailwind</span>
+      <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">Python</span>
+      
+    </div>
+    <a href="https://github.com/douaebh?tab=repositories" target="_blank" class="block">
+      <button class="w-full bg-purple-500 text-white py-2 rounded-xl hover:bg-purple-600 transition-colors duration-300">
+        Voir le projet
+      </button>
+    </a>
+  </div>
+</div>
+
+
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Education Section -->
-    <section id="education" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Formation</h2>
-          <div class="space-y-6">
-            <div
-              v-for="(edu, index) in education"
-              :key="index"
-              class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
-            >
-              <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                <div class="flex-1">
-                  <h3 class="text-xl font-semibold text-gray-900 mb-1">{{ edu.title }}</h3>
-                  <p class="text-gray-600 mb-2">{{ edu.institution }}</p>
-                  <div class="flex items-center gap-2">
-                    <BookOpenIcon class="w-4 h-4 text-gray-500" />
-                    <span class="text-sm text-gray-500">{{ edu.period }}</span>
-                  </div>
-                </div>
-                <div class="flex gap-2">
-                  <span class="border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">{{ edu.type }}</span>
-                  <span :class="[
-                    'text-xs px-2 py-1 rounded',
-                    edu.status === 'Obtenu' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
-                  ]">
-                    {{ edu.status }}
-                  </span>
-                </div>
-              </div>
+    <section id="education" class="py-16 px-4 bg-white/60">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 animate-fade-in hover:text-pink-700 transition-colors">Formation</h2>
+        <div class="space-y-8">
+          <div class="bg-white rounded-3xl shadow-lg p-8 border-l-4 border-pink-500 animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="text-xl font-semibold text-gray-800 hover:text-pink-600 transition-colors">Programme intensif de développement logiciel - ALX</h3>
+              <span class="text-pink-600 font-medium bg-pink-100 px-4 py-2 rounded-full">2024 - 2025</span>
+            </div>
+            <p class="text-gray-600 mb-2">En ligne (partenariat avec Holberton School)</p>
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+              <GraduationCap class="w-4 h-4" />
+              <span>Formation intensive en développement logiciel</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-8 border-l-4 border-rose-500 animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="text-xl font-semibold text-gray-800 hover:text-pink-600 transition-colors">Diplôme Technicien Spécialisé en Développement Informatique</h3>
+              <span class="text-rose-600 font-medium bg-rose-100 px-4 py-2 rounded-full">2023 - 2025</span>
+            </div>
+            <p class="text-gray-600 mb-2">Miage - Tanger</p>
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+              <GraduationCap class="w-4 h-4" />
+              <span>Formation technique spécialisée</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-8 border-l-4 border-purple-500 animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="text-xl font-semibold text-gray-800 hover:text-pink-600 transition-colors">Baccalauréat Lettres Modernes</h3>
+              <span class="text-purple-600 font-medium bg-purple-100 px-4 py-2 rounded-full">2022 - 2023</span>
+            </div>
+            <p class="text-gray-600 mb-2">Lycée Ibn Khatib, Tanger</p>
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+              <GraduationCap class="w-4 h-4" />
+              <span>Diplôme d'études secondaires</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Projets</h2>
-          <div class="grid lg:grid-cols-3 gap-8">
-            <div
-              v-for="(project, index) in projects"
-              :key="index"
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <div class="p-6">
-                <div class="flex items-start justify-between gap-4 mb-4">
-                  <div class="flex-1">
-                    <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full mb-2">
-                      {{ project.category }}
-                    </span>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ project.title }}</h3>
-                  </div>
-                  <span :class="[
-                    'text-xs px-2 py-1 rounded-full',
-                    project.status === 'Terminé' ? 'bg-green-100 text-green-800' :
-                    project.status === 'En développement' ? 'bg-blue-100 text-blue-800' :
-                    'bg-gray-100 text-gray-800'
-                  ]">
-                    {{ project.status }}
-                  </span>
-                </div>
-                <p class="text-gray-600 leading-relaxed mb-4">{{ project.description }}</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    v-for="tech in project.technologies"
-                    :key="tech"
-                    class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded"
-                  >
-                    {{ tech }}
-                  </span>
-                </div>
-                <div class="flex gap-2">
-                  <button class="flex-1 border border-gray-300 text-gray-700 hover:bg-gray-50 px-3 py-2 rounded text-sm font-medium flex items-center justify-center gap-2 transition-colors">
-                    <GithubIcon class="w-4 h-4" />
-                    Code
-                  </button>
-                  <button
-                    v-if="project.demo"
-                    class="flex-1 border border-gray-300 text-gray-700 hover:bg-gray-50 px-3 py-2 rounded text-sm font-medium flex items-center justify-center gap-2 transition-colors"
-                  >
-                    <ExternalLinkIcon class="w-4 h-4" />
-                    Demo
-                  </button>
-                </div>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 animate-fade-in hover:text-pink-700 transition-colors">Compétences</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Technical Skills -->
+          <div class="bg-white rounded-3xl shadow-lg p-8 animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                <Code class="w-6 h-6 text-pink-600" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">Backend</h3>
+            </div>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-pink-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-pink-500 rounded-full"></div>
+                <span class="text-gray-700">Java</span>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-pink-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-pink-500 rounded-full"></div>
+                <span class="text-gray-700">Python</span>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-pink-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-pink-500 rounded-full"></div>
+                <span class="text-gray-700">PHP</span>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-pink-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-pink-500 rounded-full"></div>
+                <span class="text-gray-700">Laravel</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-8 animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                <Monitor class="w-6 h-6 text-rose-600" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">Frontend</h3>
+            </div>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-rose-500 rounded-full"></div>
+                <span class="text-gray-700">HTML</span>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-rose-500 rounded-full"></div>
+                <span class="text-gray-700">CSS</span>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-rose-500 rounded-full"></div>
+                <span class="text-gray-700">JavaScript</span>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-rose-500 rounded-full"></div>
+                <span class="text-gray-700">Vue.js</span>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-rose-500 rounded-full"></div>
+                <span class="text-gray-700">Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-8 animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                <Database class="w-6 h-6 text-purple-600" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800">Bases de données</h3>
+            </div>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-purple-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+                <span class="text-gray-700">SQL</span>
+              </div>
+              <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-purple-50 transition-colors cursor-pointer">
+                <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+                <span class="text-gray-700">MySQL</span>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h4 class="font-medium text-gray-800 mb-3">Outils bureautiques</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors cursor-pointer">Word</span>
+                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors cursor-pointer">Excel</span>
+                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors cursor-pointer">PowerPoint</span>
+                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors cursor-pointer">Access</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Languages Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Langues</h2>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div
-              v-for="(lang, index) in languages"
-              :key="index"
-              class="bg-white border border-gray-200 rounded-lg p-6 text-center hover:shadow-md transition-shadow"
-            >
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ lang.name }}</h3>
-              <p class="text-gray-600 mb-4">{{ lang.level }}</p>
-              <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
-                <div
-                  class="bg-blue-600 h-2 rounded-full transition-all duration-1000"
-                  :style="{ width: `${lang.percentage}%` }"
-                />
+        <!-- Languages -->
+        <div class="mt-16">
+          <h3 class="text-3xl font-semibold text-center text-gray-800 mb-8 hover:text-pink-700 transition-colors">Langues</h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
+              <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-pink-200 transition-colors">
+                <Globe class="w-8 h-8 text-pink-600" />
               </div>
-              <span class="text-lg font-semibold text-gray-900">{{ lang.percentage }}%</span>
+              <h4 class="font-semibold text-gray-800 mb-2">Arabe</h4>
+              <p class="text-gray-600">Langue maternelle</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
+              <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-rose-200 transition-colors">
+                <Globe class="w-8 h-8 text-rose-600" />
+              </div>
+              <h4 class="font-semibold text-gray-800 mb-2">Français</h4>
+              <p class="text-gray-600">Niveau intermédiaire</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
+              <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-purple-200 transition-colors">
+                <Globe class="w-8 h-8 text-purple-600" />
+              </div>
+              <h4 class="font-semibold text-gray-800 mb-2">Anglais</h4>
+              <p class="text-gray-600">Niveau B2</p>
             </div>
           </div>
         </div>
@@ -257,286 +439,228 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8">Contact</h2>
-          <p class="text-xl text-gray-600 mb-12">
-            Intéressé par une collaboration ? N'hésitez pas à me contacter.
-          </p>
-
-          <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-              <MailIcon class="w-8 h-8 mx-auto mb-4 text-blue-600" />
-              <h3 class="font-semibold text-gray-900 mb-2">Email</h3>
-              <p class="text-gray-600">Douaaebh18@gmail.com</p>
-            </div>
-
-            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-              <PhoneIcon class="w-8 h-8 mx-auto mb-4 text-green-600" />
-              <h3 class="font-semibold text-gray-900 mb-2">Téléphone</h3>
-              <p class="text-gray-600">07.81.55.81.92</p>
-            </div>
-
-            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-              <MapPinIcon class="w-8 h-8 mx-auto mb-4 text-purple-600" />
-              <h3 class="font-semibold text-gray-900 mb-2">Localisation</h3>
-              <p class="text-gray-600">Tanger, Maroc</p>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap justify-center gap-4">
-            <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors">
-              <MailIcon class="w-4 h-4" />
-              Envoyer un email
-            </button>
-            <button class="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors">
-              <LinkedinIcon class="w-4 h-4" />
-              LinkedIn
-            </button>
-            <button class="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors">
-              <GithubIcon class="w-4 h-4" />
-              GitHub
-            </button>
-          </div>
-        </div>
+    <section id="contact" class="py-16 px-4 bg-gradient-to-br from-pink-100 to-rose-100">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-8 animate-fade-in hover:text-pink-700 transition-colors">Restons en contact</h2>
+    <p class="text-center text-gray-600 mb-12 text-lg">
+      N'hésitez pas à me contacter pour discuter d'opportunités de collaboration ou de projets !
+    </p>
+    
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+  <!-- Téléphone -->
+  <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg p-8 animate-slide-left hover:shadow-2xl hover:scale-105 transition-all duration-500">
+    <div class="flex items-center justify-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+        <Phone class="w-6 h-6 text-pink-600" />
       </div>
-    </section>
+      <h3 class="text-xl font-semibold text-gray-800">Téléphone</h3>
+    </div>
+    <p class="text-gray-700 text-lg text-center">
+      07.81.55.81.92
+    </p>
+  </div>
+
+  <!-- Email -->
+  <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg p-8 animate-slide-right hover:shadow-2xl hover:scale-105 transition-all duration-500">
+    <div class="flex items-center justify-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+        <Mail class="w-6 h-6 text-rose-600" />
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800">Email</h3>
+    </div>
+    <p class="text-gray-700 text-lg text-center">
+      Douaaebh18@gmail.com
+    </p>
+  </div>
+</div>
+
+
+    <!-- Social Media Links -->
+    <div class="text-center">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-8">Suivez-moi</h3>
+      <div class="flex justify-center gap-6">
+        <a href="https://github.com/douaebh" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 transition-all duration-300 group">
+          <Github class="w-6 h-6 text-gray-700 group-hover:text-pink-600 transition-colors" />
+        </a>
+        <a href="https://www.linkedin.com/in/douaa-bouhaja-333912336/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 transition-all duration-300 group">
+          <Linkedin class="w-6 h-6 text-gray-700 group-hover:text-pink-600 transition-colors" />
+        </a>
+        <a href="https://www.instagram.com/duuuv4aaae/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 transition-all duration-300 group">
+          <Instagram class="w-6 h-6 text-gray-700 group-hover:text-pink-600 transition-colors" />
+        </a>
+        <a href="#" class="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 transition-all duration-300 group">
+          <Twitter class="w-6 h-6 text-gray-700 group-hover:text-pink-600 transition-colors" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-      <div class="container mx-auto px-4 text-center">
-        <p class="text-gray-400">© 2024 Douae Bouhaja. Tous droits réservés.</p>
-        <p class="text-gray-500 mt-2">Développé avec Vue.js et Tailwind CSS</p>
+   <footer class="bg-gray-900 text-white py-12 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <!-- اسم وشعار -->
+    <div class="mb-6">
+      <h3 class="text-3xl font-extrabold text-pink-400 mb-2 tracking-wide">Douae Bouhaja</h3>
+      <p class="text-gray-300 text-lg">Développeuse Full-Stack & Designer UI/UX</p>
+    </div>
+
+    <!-- حقوق النشر -->
+    <div class="border-t border-gray-700 pt-6">
+      <p class="text-gray-400 text-sm">© 2025 Douae Bouhaja. Tous droits réservés.</p>
+      <div class="mt-4 flex justify-center gap-4 text-xl">
+        <span class="animate-bounce-gentle">🐾</span>
+        <span class="animate-pulse">💻</span>
+        <span class="animate-bounce-gentle">🎨</span>
+        <span class="animate-wave">💖</span>
       </div>
-    </footer>
+    </div>
+  </div>
+</footer>
+
+
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
 import { 
-  Mail as MailIcon,
-  Phone as PhoneIcon,
-  MapPin as MapPinIcon,
-  Github as GithubIcon,
-  ExternalLink as ExternalLinkIcon,
-  Code as CodeIcon,
-  Database as DatabaseIcon,
-  Globe as GlobeIcon,
-  Download as DownloadIcon,
-  Linkedin as LinkedinIcon,
-  Calendar as CalendarIcon,
-  Award as AwardIcon,
-  BookOpen as BookOpenIcon,
-  Briefcase as BriefcaseIcon,
-  Menu as MenuIcon,
-  X as XIcon
+  MapPin, 
+  Calendar, 
+  Download,
+  MessageCircle,
+  Palette, 
+  Smartphone, 
+  BookOpen, 
+  Heart, 
+  GraduationCap, 
+  Code, 
+  Monitor, 
+  Database, 
+  Globe, 
+  Building, 
+  Phone, 
+  Mail,
+  Github,
+  Linkedin,
+  Instagram,
+  Twitter,
+  Brain   
 } from 'lucide-vue-next'
 
-// Reactive data
-const activeSection = ref('home')
-const mobileMenuOpen = ref(false)
 
-// Navigation items
-const navigation = [
-  { id: 'home', label: 'Accueil' },
-  { id: 'about', label: 'À propos' },
-  { id: 'skills', label: 'Compétences' },
-  { id: 'education', label: 'Formation' },
-  { id: 'projects', label: 'Projets' },
-  { id: 'contact', label: 'Contact' }
-]
-
-// About items
-const aboutItems = [
-  { icon: CodeIcon, title: 'Développement', desc: 'Full-Stack' },
-  { icon: DatabaseIcon, title: 'Bases de données', desc: 'MySQL, MongoDB' },
-  { icon: GlobeIcon, title: 'Web moderne', desc: 'Vue.js, Laravel' },
-  { icon: AwardIcon, title: 'Qualité', desc: 'Code propre' }
-]
-
-// Skills categories
-const skillCategories = [
-  {
-    title: 'Frontend',
-    skills: ['Vue.js', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Inertia.js'],
-    icon: GlobeIcon,
-    color: 'blue'
-  },
-  {
-    title: 'Backend',
-    skills: ['PHP', 'Laravel', 'Java', 'JavaFX', 'Python', 'C#'],
-    icon: CodeIcon,
-    color: 'green'
-  },
-  {
-    title: 'Base de données',
-    skills: ['MySQL', 'SQL', 'MongoDB'],
-    icon: DatabaseIcon,
-    color: 'purple'
-  },
-  {
-    title: 'Outils',
-    skills: ['Git', 'VS Code', 'Figma', 'Postman', 'Docker'],
-    icon: BriefcaseIcon,
-    color: 'orange'
-  }
-]
-
-// Education data
-const education = [
-  {
-    title: 'Programme ALX - Développement Logiciel',
-    institution: 'Holberton School Partnership',
-    period: '2024 - Présent',
-    type: 'Certification',
-    status: 'En cours'
-  },
-  {
-    title: 'Licence Droit Financier et des Affaires',
-    institution: 'Université Abd Lmalik Asaadi',
-    period: '2023 - Présent',
-    type: 'Licence',
-    status: 'En cours'
-  },
-  {
-    title: 'Diplôme Technicien Spécialisé',
-    institution: 'Miage - Tanger',
-    period: '2023 - Présent',
-    type: 'Diplôme',
-    status: 'En cours'
-  },
-  {
-    title: 'Baccalauréat Lettres Modernes',
-    institution: 'Lycée Ibn Khatib',
-    period: '2022 - 2023',
-    type: 'Diplôme',
-    status: 'Obtenu'
-  }
-]
-
-// Projects data
-const projects = [
-  {
-    title: 'Système de Gestion Hôtelière',
-    description: 'Application desktop complète pour la gestion d\'hôtel avec interface moderne, gestion des réservations, facturation automatisée et rapports détaillés.',
-    technologies: ['JavaFX', 'MySQL', 'Java', 'CSS'],
-    status: 'Terminé',
-    category: 'Desktop Application',
-    github: 'https://github.com/douae/hotel-management',
-    demo: 'https://hotel-demo.douae.dev'
-  },
-  {
-    title: 'Plateforme E-Commerce',
-    description: 'Site web e-commerce responsive avec panier d\'achat, système de paiement, gestion des stocks et interface d\'administration complète.',
-    technologies: ['Vue.js', 'Laravel', 'MySQL', 'Tailwind CSS'],
-    status: 'En développement',
-    category: 'Web Application',
-    github: 'https://github.com/douae/ecommerce-platform',
-    demo: 'https://ecommerce.douae.dev'
-  },
-  {
-    title: 'Application de Gestion de Stock',
-    description: 'Solution desktop pour la gestion d\'inventaire avec suivi en temps réel, alertes automatiques et génération de rapports.',
-    technologies: ['C#', 'WPF', 'SQL Server', '.NET'],
-    status: 'Planifié',
-    category: 'Desktop Application',
-    github: 'https://github.com/douae/inventory-management',
-    demo: ''
-  }
-]
-
-// Languages data
-const languages = [
-  { name: 'Arabe', level: 'Natif', percentage: 100 },
-  { name: 'Français', level: 'Intermédiaire', percentage: 75 },
-  { name: 'Anglais', level: 'B2', percentage: 85 }
-]
-
-// Methods
-const handleScroll = () => {
-  const sections = ['home', 'about', 'skills', 'education', 'projects', 'contact']
-  const scrollPosition = window.scrollY + 100
-
-  for (const section of sections) {
-    const element = document.getElementById(section)
-    if (element) {
-      const offsetTop = element.offsetTop
-      const offsetHeight = element.offsetHeight
-      if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-        activeSection.value = section
-        break
-      }
-    }
-  }
-}
-
-const scrollToSection = (sectionId) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
-  mobileMenuOpen.value = false
-}
-
-// Lifecycle hooks
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 </script>
 
+
 <style scoped>
-/* Custom styles for smooth scrolling and transitions */
-.container {
-  max-width: 1200px;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Smooth transitions */
-* {
-  transition: all 0.3s ease;
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+@keyframes slideLeft {
+  from { 
+    opacity: 0; 
+    transform: translateX(-30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
+@keyframes slideRight {
+  from { 
+    opacity: 0; 
+    transform: translateX(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
+@keyframes bounceGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  75% { transform: rotate(-20deg); }
 }
 
-/* Smooth scroll behavior */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.8s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.8s ease-out;
+}
+
+.animate-bounce-gentle {
+  animation: bounceGentle 2s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Animation classes */
-.fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+/* Enhanced hover effects */
+.hover\:shadow-2xl:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hover\:scale-105:hover {
+  transform: scale(1.05);
 }
+
+.hover\:scale-110:hover {
+  transform: scale(1.1);
+}
+
+/* Transition improvements */
+* {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom gradient backgrounds */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 </style>
