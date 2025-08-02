@@ -477,9 +477,7 @@
               <a href="https://www.linkedin.com/in/douaa-bouhaja-333912336/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 dark:hover:bg-gray-700 transition-all duration-300 group">
                 <Linkedin class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors" />
               </a>
-              <a href="https://www.instagram.com/duuuv4aaae/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 dark:hover:bg-gray-700 transition-all duration-300 group">
-                <Instagram class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors" />
-              </a>
+             
               <a href="#" class="w-14 h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 dark:hover:bg-gray-700 transition-all duration-300 group">
                 <Twitter class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors" />
               </a>
