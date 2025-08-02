@@ -1,16 +1,30 @@
 <template>
   <div :class="{ 'dark': isDarkMode }" class="min-h-screen transition-colors duration-300">
     <div class="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
+    
       <!-- Navigation -->
       <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-pink-100 dark:border-gray-700 shadow-sm transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4">
           <div class="flex justify-between items-center">
             <!-- Douae Bouhaja Logo -->
+
+            
             <h1
+            
               @click="scrollToTop"
               class="text-2xl font-bold text-pink-800 dark:text-pink-400 animate-fade-in hover:text-pink-600 dark:hover:text-pink-300 transition-colors cursor-pointer">
               Douae Bouhaja
             </h1>
+            <!-- زر dark mode لي كيظهر غير فالشاشات الصغيرة -->
+<button
+  @click="toggleDarkMode"
+  class="p-2 rounded-full bg-pink-100 dark:bg-gray-700 text-pink-600 dark:text-pink-400 hover:bg-pink-200 dark:hover:bg-gray-600 transition-all duration-300 hover:scale-110 md:hidden"
+  :title="isDarkMode ? 'Mode clair' : 'Mode sombre'"
+>
+  <Sun v-if="isDarkMode" class="w-5 h-5" />
+  <Moon v-else class="w-5 h-5" />
+</button>
+
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-6 items-center">
               <a
@@ -86,6 +100,8 @@
           </div>
         </div>
       </section>
+
+
 
       <!-- About Section -->
       <section id="about" class="py-16 px-4 bg-white/60 dark:bg-gray-800/60 transition-colors duration-300">
