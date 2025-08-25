@@ -342,6 +342,10 @@
                   <div class="w-3 h-3 bg-pink-500 dark:bg-pink-400 rounded-full"></div>
                   <span class="text-gray-700 dark:text-gray-300">Laravel</span>
                 </div>
+                <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-pink-50 dark:hover:bg-pink-900/20 transition-colors cursor-pointer">
+                  <div class="w-3 h-3 bg-pink-500 dark:bg-pink-400 rounded-full"></div>
+                  <span class="text-gray-700 dark:text-gray-300">Angular</span>
+                </div>
               </div>
             </div>
             <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
