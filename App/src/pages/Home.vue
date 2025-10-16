@@ -47,45 +47,55 @@
         </div>
       </nav>
 
-      <!-- Hero Section -->
-      <section class="pt-24 pb-16 px-4">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center mb-16 animate-slide-up">
-            <div class="relative inline-block mb-8">
-            </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-gray-800 dark:text-gray-100 mb-4 hover:text-pink-700 dark:hover:text-pink-400 transition-colors duration-500">
-              Douae <span class="text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 transition-colors">Bouhaja</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Développeuse Full-Stack passionnée | Créatrice d'expériences digitales | 20 ans
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 text-gray-600 dark:text-gray-300 mb-8">
-              <div class="flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
-                <MapPin class="w-5 h-5 text-pink-600 dark:text-pink-400" />
-                <span>Gzenaya, Tanger, Maroc</span>
-              </div>
-              <div class="flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
-                <Calendar class="w-5 h-5 text-pink-600 dark:text-pink-400" />
-                <span>18/06/2005</span>
-              </div>
-            </div>
-            
-            <!-- CV Download Button -->
-            <div class="flex justify-center gap-4">
-              <!-- Bouton Télécharger CV -->
-              <button class="bg-gradient-to-r from-pink-500 to-rose-500 dark:from-pink-600 dark:to-rose-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 hover:from-pink-600 hover:to-rose-600 dark:hover:from-pink-700 dark:hover:to-rose-700 transition-all duration-300 flex items-center gap-3">
-                <Download class="w-5 h-5" />
-                Télécharger CV
-              </button>
-              <!-- Bouton Me Contacter -->
-              <a href="#contact" class="bg-white dark:bg-gray-800 text-pink-600 dark:text-pink-400 border-2 border-pink-500 dark:border-pink-400 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 hover:bg-pink-50 dark:hover:bg-gray-700 transition-all duration-300 flex items-center gap-3">
-                <MessageCircle class="w-5 h-5" />
-                Me Contacter
-              </a>
-            </div>
-          </div>
+ <!-- Hero Section -->
+<section class="pt-24 pb-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 animate-slide-up">
+      <div class="relative inline-block mb-8">
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold text-gray-800 dark:text-gray-100 mb-4 hover:text-pink-700 dark:hover:text-pink-400 transition-colors duration-500">
+        Douae <span class="text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 transition-colors">Bouhaja</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Développeuse Full-Stack passionnée | Créatrice d'expériences digitales | 20 ans
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 text-gray-600 dark:text-gray-300 mb-8">
+        <div class="flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
+          <MapPin class="w-5 h-5 text-pink-600 dark:text-pink-400" />
+          <span>Gzenaya, Tanger, Maroc</span>
         </div>
-      </section>
+        <div class="flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
+          <Calendar class="w-5 h-5 text-pink-600 dark:text-pink-400" />
+          <span>18/06/2005</span>
+        </div>
+      </div>
+
+      <!-- CV Download Button -->
+      <div class="flex justify-center gap-4">
+        <!-- Bouton Télécharger CV -->
+        <a
+          href="/CV_Douaa_Bouhaja.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-gradient-to-r from-pink-500 to-rose-500 dark:from-pink-600 dark:to-rose-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 hover:from-pink-600 hover:to-rose-600 dark:hover:from-pink-700 dark:hover:to-rose-700 transition-all duration-300 flex items-center gap-3"
+        >
+          <Download class="w-5 h-5" />
+          Télécharger CV
+        </a>
+
+        <!-- Bouton Me Contacter -->
+        <a
+          href="#contact"
+          class="bg-white dark:bg-gray-800 text-pink-600 dark:text-pink-400 border-2 border-pink-500 dark:border-pink-400 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 hover:bg-pink-50 dark:hover:bg-gray-700 transition-all duration-300 flex items-center gap-3"
+        >
+          <MessageCircle class="w-5 h-5" />
+          Me Contacter
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <!-- About Section -->
       <section id="about" class="py-16 px-4 bg-white/60 dark:bg-gray-800/60 transition-colors duration-300">
