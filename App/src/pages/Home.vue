@@ -1,16 +1,30 @@
 <template>
   <div :class="{ 'dark': isDarkMode }" class="min-h-screen transition-colors duration-300">
     <div class="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
+    
       <!-- Navigation -->
       <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-pink-100 dark:border-gray-700 shadow-sm transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4">
           <div class="flex justify-between items-center">
             <!-- Douae Bouhaja Logo -->
+
+            
             <h1
+            
               @click="scrollToTop"
               class="text-2xl font-bold text-pink-800 dark:text-pink-400 animate-fade-in hover:text-pink-600 dark:hover:text-pink-300 transition-colors cursor-pointer">
               Douae Bouhaja
             </h1>
+            <!-- زر dark mode لي كيظهر غير فالشاشات الصغيرة -->
+<button
+  @click="toggleDarkMode"
+  class="p-2 rounded-full bg-pink-100 dark:bg-gray-700 text-pink-600 dark:text-pink-400 hover:bg-pink-200 dark:hover:bg-gray-600 transition-all duration-300 hover:scale-110 md:hidden"
+  :title="isDarkMode ? 'Mode clair' : 'Mode sombre'"
+>
+  <Sun v-if="isDarkMode" class="w-5 h-5" />
+  <Moon v-else class="w-5 h-5" />
+</button>
+
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-6 items-center">
               <a
@@ -95,6 +109,8 @@
     </div>
   </div>
 </section>
+
+
 
 
       <!-- About Section -->
@@ -336,6 +352,10 @@
                   <div class="w-3 h-3 bg-pink-500 dark:bg-pink-400 rounded-full"></div>
                   <span class="text-gray-700 dark:text-gray-300">Laravel</span>
                 </div>
+                <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-pink-50 dark:hover:bg-pink-900/20 transition-colors cursor-pointer">
+                  <div class="w-3 h-3 bg-pink-500 dark:bg-pink-400 rounded-full"></div>
+                  <span class="text-gray-700 dark:text-gray-300">Angular</span>
+                </div>
               </div>
             </div>
             <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 animate-slide-up hover:shadow-2xl hover:scale-105 transition-all duration-500">
@@ -471,9 +491,7 @@
               <a href="https://www.linkedin.com/in/douaa-bouhaja-333912336/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 dark:hover:bg-gray-700 transition-all duration-300 group">
                 <Linkedin class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors" />
               </a>
-              <a href="https://www.instagram.com/duuuv4aaae/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 dark:hover:bg-gray-700 transition-all duration-300 group">
-                <Instagram class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors" />
-              </a>
+             
               <a href="#" class="w-14 h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center hover:shadow-2xl hover:scale-110 hover:bg-pink-50 dark:hover:bg-gray-700 transition-all duration-300 group">
                 <Twitter class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors" />
               </a>
